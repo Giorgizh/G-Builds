@@ -1,0 +1,253 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+header {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
+.upper {
+  background-color: lightgray;
+  display: flex;
+  height: 30px;
+  align-items: center;
+  padding-left: 200px;
+  gap: 40px;
+  font-weight: 700;
+}
+.upper i {
+  padding-right: 5px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 50px;
+}
+.head img {
+  width: 150px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #f50057;
+  border-radius: 50px;
+  overflow: hidden;
+  width: 500px;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.search-box input::-moz-placeholder {
+  color: #555;
+  font-weight: 700;
+}
+
+.search-box input::placeholder {
+  color: #555;
+  font-weight: 700;
+}
+
+.search-box button {
+  background-color: #f50057;
+  border: none;
+  color: white;
+  padding: 13px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box button i {
+  font-size: 20px;
+}
+
+.search-box button:hover {
+  background-color: #c51162;
+}
+
+.icons {
+  display: flex;
+  gap: 50px;
+}
+
+.pcpart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.pcpart h1 {
+  padding-top: 20px;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.parts {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.parts img {
+  width: 150px;
+}
+.parts p {
+  text-align: center;
+  font-weight: 700;
+}
+
+.nawilebi {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1200px;
+  background-color: rgb(240, 240, 240);
+  margin-bottom: 40px;
+}
+
+.foot {
+  background-color: #f50057;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+.foot h1 {
+  font-size: 20px;
+  color: white;
+}
+.foot p {
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+}
+.foot img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.left p {
+  padding-top: 11px;
+}
+
+.right {
+  display: flex;
+  gap: 15px;
+}
+
+.fooot {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.low {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+.low p {
+  font-size: 20px;
+  font-weight: 700;
+}
+.low img {
+  width: 50%;
+}
+
+.bottom {
+  font-weight: 700;
+  line-height: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.marj {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}/*# sourceMappingURL=styles.css.map */
