@@ -161,6 +161,7 @@ header {
   align-items: center;
 }
 .pcpart h1 {
+  color: black;
   padding-top: 20px;
   font-weight: 700;
   padding-bottom: 20px;
