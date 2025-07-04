@@ -99,12 +99,18 @@ header{
     font-size: 50px;
   }
 }
+
 .parts{
     padding-top: 10px;
     width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    &:hover{
+      p::after {
+    width: 100%;
+}
+    }
     img{
         width: 150px;
     }
@@ -126,9 +132,6 @@ header{
     left: 0;
     bottom: -5px;
     transition: 0.5s;
-    }
-    p:hover::after{
-      width: 100%;
     }
 }
 .nawilebi{
