@@ -82,55 +82,118 @@ header {
   display: flex;
   gap: 50px;
 }
-.cart{
+.cart {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 100px 50px;
 }
-.count{
+.count {
   display: flex;
   align-items: center;
   gap: 10px;
-  h1{
+  h1 {
     font-weight: 550;
     font-size: 25px;
   }
-  p{
+  p {
     font-weight: 400;
     font-size: 23px;
   }
 }
-.items{
-  padding-top: 60px;
-  font-weight: 450;
+.items {
+  padding-top: 30px;
+  font-weight: 700;
   display: flex;
-  flex-direction: column;
   gap: 10px;
+  width: 1000px;
   padding-bottom: 200px;
-  a{
+  a {
     color: black;
     font-weight: 700;
   }
+  img {
+    width: 200px;
+  }
+  input {
+    width: 55px;
+    height: 32px;
+    font-size: 15px;
+    text-align: center;
+  }
+  button {
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+    font-size: 13px;
+    color: white;
+    background-color: #f50057;
+    i {
+      padding-right: 5px;
+    }
+  }
 }
-.checkout{
+.info {
+  padding-left: 50px;
+}
+.p1 {
+  padding-top: 20px;
+  padding-bottom: 5px;
+  color: rgb(129, 129, 129);
+  font-weight: 400;
+}
+.p1::after {
+  padding-left: 10px;
+  content: "RTX 5090";
+  font-size: 15px;
+  color: black;
+  font-weight: 700;
+}
+.p2 {
+  color: rgb(129, 129, 129);
+  font-weight: 400;
+  padding-top: 5px;
+  padding-bottom: 20px;
+}
+.p2::after {
+  padding-left: 10px;
+  content: "ROG ASTRAL OC";
+  font-size: 15px;
+  color: black;
+  font-weight: 700;
+}
+
+.ck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  p{
+    font-size: 25px;
+  }
+  button{
+    width: 150px;
+  }
+}
+.checkout {
   display: flex;
   flex-direction: column;
   align-items: baseline;
   gap: 20px;
-  div{
+  div {
     display: flex;
     justify-content: space-between;
     width: 250px;
   }
-  h1{
+  h1 {
     font-size: 25px;
   }
-  p{
+  p {
     font-weight: 500;
     font-size: 22px;
   }
-  button{
+  button {
     border-radius: 5px;
     background-color: #f50057;
     color: white;
