@@ -1,0 +1,297 @@
+@media (max-width: 1400px) {
+  .cart {
+    flex-wrap: wrap-reverse;
+  }
+  .items {
+    width: 800px;
+  }
+  .info{
+    div{
+      display: flex;
+      gap: 10px;
+      button{
+        font-size: 11px;
+        i{
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1165px) {
+  .items {
+    width: 700px;
+  }
+}
+@media (max-width: 1065px) {
+  .items {
+    width: 600px;
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+@media (max-width: 965px) {
+  .items {
+    width: 500px;
+    .info {
+      p {
+        font-size: smaller;
+      }
+    }
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  .info{
+    div{
+      flex-direction: column;
+      button{
+        font-size: 8px;
+        i{
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  .checkout {
+    width: 200px;
+    div {
+      width: 200px;
+    }
+    button {
+      width: 200px;
+    }
+  }
+}
+@media (max-width: 815px) {
+  .cart {
+    padding-top: 50px;
+    margin: 0;
+    justify-content: center;
+  }
+  .items {
+    width: 600px;
+    .info {
+      padding-left: 0;
+      p {
+        font-size: 20px;
+      }
+    }
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .checkout {
+    width: 600px;
+    h1 {
+      font-size: 30px;
+    }
+    div {
+      width: 600px;
+      p {
+        font-size: xx-large;
+      }
+    }
+    button {
+      width: 600px;
+    }
+  }
+}
+@media (max-width: 720px) {
+  .icons {
+    gap: 28px;
+  }
+  .foot {
+    .left {
+      gap: 20px;
+      h1 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 11px;
+      }
+    }
+  }
+  .fooot {
+    .low {
+      width: 240px;
+    }
+    .marj {
+      font-size: 12px;
+    }
+    .bottom {
+      font-size: 13px;
+    }
+  }
+  .right {
+    img {
+      width: 25px;
+    }
+  }
+}
+@media (max-width: 615px) {
+  .search-box {
+    button {
+      display: none;
+    }
+  }
+  .icons {
+    gap: 15px;
+  }
+  .head {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .search-box {
+    input {
+      font-size: 12px;
+    }
+  }
+  .items {
+    width: 400px;
+    button {
+      width: 100px;
+    }
+    .info {
+      padding-left: 0;
+      p {
+        font-size: 15px;
+      }
+    }
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  .checkout {
+    width: 400px;
+    h1 {
+      font-size: 30px;
+    }
+    div {
+      width: 400px;
+      p {
+        font-size: xx-large;
+      }
+    }
+    button {
+      width: 400px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .upper {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .head {
+    gap: 10px;
+  }
+  .icons {
+    i {
+      font-size: 15px;
+    }
+  }
+  .ck{
+    p{
+      font-size: 15px;
+    }
+  }
+  .foot {
+    .left {
+      i {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 8px;
+      }
+      p {
+        font-size: 8px;
+      }
+    }
+    .right {
+      img {
+        width: 15px;
+      }
+    }
+  }
+  .fooot {
+    .low {
+      width: 130px;
+      p {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 420px) {
+  .items {
+    width: 360px;
+    .info {
+      padding-left: 0;
+      p {
+        font-size: 11px;
+      }
+    }
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .checkout {
+    width: 360px;
+    h1 {
+      font-size: 30px;
+    }
+    div {
+      width: 360px;
+      p {
+        font-size: 20px;
+      }
+    }
+    button {
+      width: 360px;
+    }
+  }
+}
+@media (max-width: 380px) {
+  .checkout{
+    h1{
+      padding-left: 20px;
+    }
+    padding-bottom: 50px;
+  }
+  .count{
+    h1{
+      padding-left: 20px;
+    }
+  }
+  .ck {
+    .can{
+      font-size: 10px;
+    }
+    width: 80px;
+    p {
+      font-size: 13px;
+    }
+  }
+  .checkout{
+    div{
+      justify-content: space-around;
+      width: 320px;
+    }
+  }
+}

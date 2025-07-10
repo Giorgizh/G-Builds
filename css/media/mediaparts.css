@@ -1,0 +1,116 @@
+@media (max-width: 720px) {
+  .icons {
+    gap: 20px;
+  }
+  .foot {
+    .left {
+      gap: 20px;
+      h1 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 11px;
+      }
+    }
+  }
+  .fooot {
+    .low {
+      width: 240px;
+    }
+    .marj {
+      font-size: 12px;
+    }
+    .bottom {
+      font-size: 13px;
+    }
+  }
+  .right {
+    img {
+      width: 25px;
+    }
+  }
+}
+@media (max-width: 635px) {
+  .search-box {
+    button {
+      display: none;
+    }
+  }
+  .icons {
+    gap: 15px;
+  }
+  .head {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .search-box {
+    input {
+      font-size: 12px;
+    }
+  }
+  .nawilebi {
+    .parts {
+      width: 300px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .head {
+    gap: 20px;
+  }
+  .parts {
+    width: 360px;
+  }
+  .upper {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .icons {
+    i {
+      font-size: 18px;
+    }
+  }
+  .foot {
+    .left {
+      i {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 8px;
+      }
+      p {
+        font-size: 8px;
+      }
+    }
+    .right {
+      img {
+        width: 15px;
+      }
+    }
+  }
+  .fooot {
+    .low {
+      width: 130px;
+      p {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .icons {
+    gap: 10px;
+    i {
+      font-size: 15px;
+    }
+  }
+}

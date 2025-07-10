@@ -1,0 +1,10 @@
+@media (max-width:420px){
+    .wrapper{
+        width: 360px;
+        .remember-forgot{
+            a{
+                font-size: 12px;
+            }
+        }
+    }
+}

@@ -202,11 +202,12 @@ header {
 }
 
 .nawilebi {
+  border-radius: 25px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 1200px;
+  max-width: 1200px;
   background-color: rgb(240, 240, 240);
   margin-bottom: 40px;
 }
