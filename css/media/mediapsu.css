@@ -1,0 +1,153 @@
+@media (max-width: 920px) {
+  .rightmb {
+    padding-left: 30px;
+  }
+  .nawilebi {
+    gap: 50px;
+  }
+  .parts {
+    width: 200px;
+  }
+}
+@media (max-width: 800px) {
+  .mobo {
+    margin-bottom: 400px;
+  }
+}
+@media (max-width: 715px) {
+  .rightmb {
+    form {
+      h1 {
+        font-size: 18px;
+      }
+      select {
+        width: 150px;
+        font-size: 10px;
+      }
+    }
+  }
+  .foot {
+    .left {
+      gap: 20px;
+      h1 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 11px;
+      }
+    }
+  }
+  .fooot {
+    .low {
+      width: 240px;
+    }
+    .marj {
+      font-size: 12px;
+    }
+    .bottom {
+      font-size: 13px;
+    }
+  }
+  .right {
+    img {
+      width: 25px;
+    }
+  }
+}
+@media (max-width: 615px) {
+  .search-box {
+    button {
+      display: none;
+    }
+  }
+  .icons {
+    gap: 15px;
+  }
+  .head {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .search-box {
+    input {
+      font-size: 12px;
+    }
+  }
+  .mobo {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    .nawilebi {
+      justify-content: center;
+    }
+    .rightmb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .upper {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+  }
+  .parts {
+    width: 180px;
+    img {
+      width: 150px;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .head {
+    gap: 10px;
+  }
+  .icons {
+    i {
+      font-size: 15px;
+    }
+  }
+  .filter{
+    max-width: 350px;
+  }
+  .foot {
+    .left {
+      i {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 8px;
+      }
+      p {
+        font-size: 8px;
+      }
+    }
+    .right {
+      img {
+        width: 15px;
+      }
+    }
+  }
+  .fooot {
+    .low {
+      width: 130px;
+      p {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 15px;
+      }
+    }
+  }
+}
+@media (max-width:454px){
+    .rightmb{
+    padding-bottom: 400px;
+  }
+}
