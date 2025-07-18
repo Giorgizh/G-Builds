@@ -1,14 +1,12 @@
-@media (max-width: 1280px) {
-  main {
-    p {
-      font-size: 18px;
-    }
-  }
-}
+
 @media (max-width: 1030px) {
   main {
+    .aboutus{
+      flex-direction: column;
+      align-items: center;
+    }
     p {
-      font-size: 16px;
+      font-size: 20px;
     }
   }
 }
@@ -79,6 +77,9 @@
       display: none;
     }
   }
+  img{
+    width: 120px;
+  }
   .icons {
     gap: 15px;
   }
@@ -95,9 +96,12 @@
     }
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 510px) {
   .head {
     gap: 20px;
+  }
+  img{
+    width: 80px;
   }
   .upper {
     display: flex;
