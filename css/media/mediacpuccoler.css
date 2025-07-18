@@ -1,3 +1,8 @@
+@media (max-width: 1615px) {
+  .nawilebi{
+    gap: 20px;
+  }
+}
 @media (max-width: 920px) {
   .rightmb {
     padding-left: 30px;

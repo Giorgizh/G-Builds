@@ -1,4 +1,9 @@
-@media (max-width: 920px) {
+@media (max-width: 1615px) {
+  .nawilebi {
+    gap: 20px;
+  }
+}
+@media (max-width: 940px) {
   .rightmb {
     padding-left: 30px;
   }
@@ -51,6 +56,28 @@
   .right {
     img {
       width: 25px;
+    }
+  }
+}
+@media (max-width: 655px) {
+  .search-box {
+    button {
+      display: none;
+    }
+  }
+  .icons {
+    gap: 15px;
+  }
+  .head {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .search-box {
+    input {
+      font-size: 12px;
     }
   }
 }
@@ -113,10 +140,10 @@
       font-size: 15px;
     }
   }
-  .filter{
+  .filter {
     max-width: 350px;
   }
-  .rightmb{
+  .rightmb {
     padding-bottom: 750px;
   }
   .foot {

@@ -54,6 +54,28 @@
     }
   }
 }
+@media (max-width: 655px) {
+  .search-box {
+    button {
+      display: none;
+    }
+  }
+  .icons {
+    gap: 15px;
+  }
+  .head {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .search-box {
+    input {
+      font-size: 12px;
+    }
+  }
+}
 @media (max-width: 615px) {
   .search-box {
     button {

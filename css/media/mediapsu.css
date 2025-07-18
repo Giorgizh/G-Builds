@@ -54,6 +54,28 @@
     }
   }
 }
+@media (max-width: 655px) {
+  .search-box {
+    button {
+      display: none;
+    }
+  }
+  .icons {
+    gap: 15px;
+  }
+  .head {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .search-box {
+    input {
+      font-size: 12px;
+    }
+  }
+}
 @media (max-width: 615px) {
   .search-box {
     button {
@@ -113,7 +135,7 @@
       font-size: 15px;
     }
   }
-  .filter{
+  .filter {
     max-width: 350px;
   }
   .foot {
@@ -146,8 +168,8 @@
     }
   }
 }
-@media (max-width:454px){
-    .rightmb{
+@media (max-width: 454px) {
+  .rightmb {
     padding-bottom: 400px;
   }
 }

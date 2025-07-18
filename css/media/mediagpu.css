@@ -1,3 +1,8 @@
+@media (max-width: 1615px) {
+  .nawilebi{
+    gap: 20px;
+  }
+}
 @media (max-width: 1220px) {
   .parts {
     width: 250px;
@@ -80,6 +85,28 @@
   .right {
     img {
       width: 25px;
+    }
+  }
+}
+@media (max-width: 655px) {
+  .search-box {
+    button {
+      display: none;
+    }
+  }
+  .icons {
+    gap: 15px;
+  }
+  .head {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .search-box {
+    input {
+      font-size: 12px;
     }
   }
 }

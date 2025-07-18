@@ -174,7 +174,9 @@ main{
 * Autoprefixer: v10.4.7
 * Browsers: last 4 version
 */
-
+img {
+  width: 200px;
+}
 body {
   max-width: 1600px;
   margin: 0 auto;
@@ -186,7 +188,7 @@ body {
 
 header {
   -webkit-box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-          box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   position: sticky;
   top: 0;
   background-color: white;
@@ -199,8 +201,8 @@ header {
   display: flex;
   height: 30px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding-left: 200px;
   gap: 40px;
   font-weight: 700;
@@ -215,11 +217,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 10px 20px;
   gap: 50px;
   img {
@@ -231,8 +233,8 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border: 1px solid #f50057;
   border-radius: 50px;
   overflow: hidden;
@@ -241,8 +243,8 @@ header {
 
 .search-box input {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   border: none;
   outline: none;
   padding: 10px 20px;
@@ -284,11 +286,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .search-box button i {
@@ -304,28 +306,27 @@ header {
   display: flex;
   gap: 50px;
 }
-main{
+main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   line-height: 150%;
   margin-top: 40px;
   margin-bottom: 40px;
-  p{
+  p {
     font-size: 22px;
   }
-  h1{
+  h1 {
     font-size: 40px;
     padding-bottom: 20px;
   }
-
 }
 .foot {
   background-color: #f50057;
@@ -333,11 +334,11 @@ main{
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   padding: 10px;
   margin-bottom: 50px;
   h1 {
@@ -359,8 +360,8 @@ main{
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 50px;
   p {
     padding-top: 11px;
@@ -377,8 +378,8 @@ main{
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
 }
 .low {
   display: -webkit-box;
@@ -386,8 +387,8 @@ main{
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-bottom: 40px;
   p {
     font-size: 20px;
@@ -408,8 +409,8 @@ main{
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -419,8 +420,8 @@ main{
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   gap: 10px;
   i,
   a {
