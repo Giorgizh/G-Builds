@@ -76,7 +76,9 @@
     flex-direction: column;
     align-items: center;
     gap: 30px;
-
+    button {
+      display: block;
+    }
     .nawilebi {
       justify-content: center;
     }

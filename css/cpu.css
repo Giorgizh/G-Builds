@@ -147,6 +147,9 @@ header {
     font-size: 25px;
     color: #555;
   }
+  button{
+    display: none;
+  }
 }
 .filter {
   padding-left: 50px;

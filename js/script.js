@@ -1,4 +1,4 @@
-var div = document.getElementById('main');
+var div = document.getElementById('filter');
 var display = 0;
 
 function hideShow()

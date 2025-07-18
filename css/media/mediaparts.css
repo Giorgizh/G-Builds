@@ -46,6 +46,11 @@
       }
     }
   }
+  .mobo{
+    button {
+      display: block;
+    }
+  }
   .search-box {
     input {
       font-size: 12px;

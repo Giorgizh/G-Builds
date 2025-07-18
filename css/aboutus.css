@@ -175,7 +175,10 @@ main{
 * Browsers: last 4 version
 */
 img {
-  width: 200px;
+  width: 150px;
+}
+.aboutus{
+  display: flex;
 }
 body {
   max-width: 1600px;
@@ -321,7 +324,9 @@ main {
   margin-top: 40px;
   margin-bottom: 40px;
   p {
-    font-size: 22px;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 120%;
   }
   h1 {
     font-size: 40px;

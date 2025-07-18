@@ -1,5 +1,5 @@
 @media (max-width: 1615px) {
-  .nawilebi{
+  .nawilebi {
     gap: 20px;
   }
 }
@@ -135,7 +135,9 @@
     flex-direction: column;
     align-items: center;
     gap: 30px;
-
+    button {
+      display: block;
+    }
     .nawilebi {
       justify-content: center;
     }
