@@ -147,7 +147,7 @@ header {
     font-size: 25px;
     color: #555;
   }
-  button{
+  .buto{
     display: none;
   }
 }

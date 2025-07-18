@@ -3,22 +3,23 @@
     gap: 20px;
   }
 }
-@media (max-width: 1220px) {
-  .parts {
-    width: 250px;
+@media (max-width: 1260px) {
+  .parts{
+    width: 200px;
   }
 }
-@media (max-width: 1070px) {
+@media (max-width: 1110px) {
   .parts {
     width: 200px;
   }
   .rightmb {
-    padding-bottom: 900px;
+    padding-bottom: 500px;
   }
 }
-@media (max-width: 920px) {
+@media (max-width: 960px) {
   .rightmb {
     padding-left: 30px;
+    padding-bottom: 900px;
   }
   .nawilebi {
     gap: 50px;
@@ -34,11 +35,16 @@
   .parts {
     width: 180px;
     img {
-      width: 120px;
+      width: 160px;
     }
   }
   .rightmb {
-    padding-bottom: 500px;
+    padding-bottom: 1200px;
+  }
+}
+@media (max-width: 758px) {
+  .parts{
+    width: 200px;
   }
 }
 @media (max-width: 720px) {
@@ -137,6 +143,9 @@
     gap: 30px;
     button {
       display: block;
+    }
+    .filter {
+      display: none;
     }
     .nawilebi {
       justify-content: center;

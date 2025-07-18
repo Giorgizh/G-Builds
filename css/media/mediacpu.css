@@ -138,6 +138,9 @@
     button {
       display: block;
     }
+    .filter{
+      display: none;
+    }
     .nawilebi {
       justify-content: center;
     }

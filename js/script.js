@@ -5,12 +5,12 @@ function hideShow()
 {
     if(display == 1)
     {
-        div.style.display = 'flex';
+        div.style.display = 'none';
         display = 0;
     }
     else
     {
-        div.style.display = 'none';
+        div.style.display = 'flex';
         display = 1;
     }
 }

@@ -79,6 +79,9 @@
     button {
       display: block;
     }
+    .filter {
+      display: none;
+    }
     .nawilebi {
       justify-content: center;
     }
@@ -106,7 +109,7 @@
       font-size: 15px;
     }
   }
-  .filter{
+  .filter {
     max-width: 340px;
   }
   .foot {
