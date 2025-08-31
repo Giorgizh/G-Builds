@@ -224,22 +224,31 @@ header {
   }
 }
 .spc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   h1 {
     font-size: 25px;
     text-align: center;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    text-decoration: underline #f50057;
+    text-underline-offset: 8px;
   }
+}
+.a{
+  display: flex;
+  justify-content: center;
 }
 .specification {
   margin-bottom: 40px;
   display: flex;
+  width: 600px;
+  justify-content: center;
   border: 2px solid #cecece;
   border-radius: 25px;
-  gap: 100px;
+  gap: 150px;
   ul {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 50px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
