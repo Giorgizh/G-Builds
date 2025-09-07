@@ -1,0 +1,231 @@
+@media (max-width: 1220px) {
+  .spec {
+    .smallones {
+      p {
+        font-size: 20px;
+      }
+    }
+    .price {
+      p {
+        font-size: 30px;
+      }
+    }
+    .pay {
+      input {
+        width: 120px;
+      }
+      button {
+        width: 150px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+@media (max-width: 1080px) {
+  .mobo {
+    align-items: center;
+    flex-direction: column;
+    .img {
+      padding-left: 0;
+      width: 500px;
+    }
+  }
+}
+@media (max-width: 940px) {
+  .rightmb {
+    padding-left: 30px;
+  }
+}
+@media (max-width: 715px) {
+  .rightmb {
+    form {
+      h1 {
+        font-size: 18px;
+      }
+      select {
+        width: 150px;
+        font-size: 10px;
+      }
+    }
+  }
+  .foot {
+    .left {
+      gap: 20px;
+      h1 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 11px;
+      }
+    }
+  }
+  .fooot {
+    .low {
+      width: 240px;
+    }
+    .marj {
+      font-size: 12px;
+    }
+    .bottom {
+      font-size: 13px;
+    }
+  }
+  .right {
+    img {
+      width: 25px;
+    }
+  }
+}
+@media (max-width: 655px) {
+  .search-box {
+    button {
+      display: none;
+    }
+  }
+  .icons {
+    gap: 15px;
+  }
+  .head {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .search-box {
+    input {
+      font-size: 12px;
+    }
+  }
+  .spec {
+    width: 500px;
+  }
+}
+@media (max-width: 615px) {
+  .search-box {
+    button {
+      display: none;
+    }
+  }
+  .icons {
+    gap: 15px;
+  }
+  .head {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .search-box {
+    input {
+      font-size: 12px;
+    }
+  }
+  .mobo {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    .filter {
+      display: none;
+    }
+    .rightmb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+  }
+}
+@media (max-width: 550px) {
+  .img {
+    width: 320px !important;
+    .nawili {
+      img {
+        width: 320px;
+      }
+    }
+    .down {
+      width: 320px;
+      img {
+        width: 50px;
+      }
+    }
+  }
+  .spec {
+    width: 320px !important;
+  }
+  .pay {
+    flex-direction: column;
+    gap: 5px;
+    input {
+      width: 200px !important;
+    }
+    button {
+      width: 250px !important;
+      font-size: 17px !important;
+    }
+  }
+  .mobo {
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 500px) {
+  .upper {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+  }
+}
+@media (max-width: 480px) {
+  .head {
+    gap: 10px;
+  }
+  .icons {
+    i {
+      font-size: 15px;
+    }
+  }
+  .filter {
+    max-width: 350px;
+  }
+  .rightmb {
+    padding-bottom: 750px;
+  }
+  .foot {
+    .left {
+      i {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 8px;
+      }
+      p {
+        font-size: 8px;
+      }
+    }
+    .right {
+      img {
+        width: 15px;
+      }
+    }
+  }
+  .fooot {
+    .low {
+      width: 130px;
+      p {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .specificatiom {
+    width: 350px;
+    gap: 100px;
+    font-size: 11px;
+  }
+}
