@@ -53,67 +53,67 @@ main {
   text-shadow: 0px 0px 15px rgb(255, 0, 21);
 }
 .mobo {
-  background-image: url(../images/parts/motherboard.webp);
+  background-image: url(../images/motherboard.png);
   background-position: center;
   background-size: 250px;
   background-repeat: no-repeat;
 }
 .cpu {
-  background-image: url(../images/parts/cpu.png);
+  background-image: url(../images/cpu.png);
   background-position: center;
   background-size: 250px;
   background-repeat: no-repeat;
 }
 .cpucooler {
-  background-image: url(../images/parts/cpu-cooler.png);
+  background-image: url(../images/cpucooler.png);
   background-position: center;
   background-size: 250px;
   background-repeat: no-repeat;
 }
 .ram {
-  background-image: url(../images/parts/ram.png);
+  background-image: url(../images/memory.png);
   background-position: center;
   background-size: 250px;
   background-repeat: no-repeat;
 }
 .gpu {
-  background-image: url(../images/parts/Gpu.webp);
+  background-image: url(../images/gpu.png);
   background-position: center;
   background-size: 250px;
   background-repeat: no-repeat;
 }
 .psu {
-  background-image: url(../images/parts/psu.png);
+  background-image: url(../images/psu.png);
   background-position: center;
   background-size: 250px;
   background-repeat: no-repeat;
 }
 .hdd {
-  background-image: url(../images/parts/hdd.png);
+  background-image: url(../images/hdd.png);
   background-position: center;
   background-size: 250px;
   background-repeat: no-repeat;
 }
 .ssd {
-  background-image: url(../images/parts/SSD.avif);
+  background-image: url(../images/ssd.png);
   background-position: center;
   background-size: 250px;
   background-repeat: no-repeat;
 }
 .m2 {
-  background-image: url(../images/parts/m.2.webp);
+  background-image: url(../images/m2.png);
   background-position: center;
   background-size: 250px;
   background-repeat: no-repeat;
 }
 .case {
-  background-image: url(../images/parts/case.png);
+  background-image: url(../images/case.png);
   background-position: center;
   background-size: 250px;
   background-repeat: no-repeat;
 }
 .cooler {
-  background-image: url(../images/parts/casefan.webp);
+  background-image: url(../images/cooler.png);
   background-position: center;
   background-size: 250px;
   background-repeat: no-repeat;
