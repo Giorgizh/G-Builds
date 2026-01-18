@@ -1,0 +1,174 @@
+{% extends "base.html" %} {% block head %}
+<title>Edit RAM</title>
+<link rel="stylesheet" href="../../static/css/reset.css" />
+<link rel="stylesheet" href="../../static/css/edit.css" />
+<link rel="stylesheet" href="../../static/css/media/mediaedit.css" />
+{% endblock %} {% block body %}
+<div class="ii">
+  <a onclick="history.back()">
+    <i style="color: white" class="fa-solid fa-arrow-left fa-2xl"></i>
+  </a>
+</div>
+
+<center>
+  <h1
+    style="text-align: center; color: white; font-size: 30px; padding-top: 30px"
+  >
+    Edit RAM
+  </h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input name="name" value="{{ ram.name }}" placeholder="Name" required />
+
+    <input
+      name="price"
+      type="number"
+      step="0.01"
+      value="{{ ram.price }}"
+      placeholder="Price"
+      required
+    />
+
+    <input
+      name="description"
+      value="{{ ram.description }}"
+      placeholder="Description"
+    />
+
+    <input name="brand" value="{{ ram.brand }}" placeholder="Brand" required />
+
+    <input
+      name="ram_type"
+      value="{{ ram.ram_type }}"
+      placeholder="RAM Type (e.g. DDR4, DDR5)"
+      required
+    />
+
+    <input
+      name="capacity"
+      value="{{ ram.capacity }}"
+      placeholder="Capacity (e.g. 16GB, 32GB, 2x16GB)"
+      required
+    />
+
+    <input
+      name="speed"
+      value="{{ ram.speed }}"
+      placeholder="Speed (e.g. 3200MHz, 6000MHz)"
+      required
+    />
+
+    <input
+      name="lighting"
+      value="{{ ram.lighting }}"
+      placeholder="Lighting (e.g. RGB, ARGB, None)"
+    />
+
+    <input
+      name="Color"
+      value="{{ ram.Color }}"
+      placeholder="Color (e.g. Black, White, Silver)"
+    />
+
+    <input
+      name="condition"
+      value="{{ ram.condition }}"
+      placeholder="Condition (New / Used / Refurbished)"
+    />
+
+    <p>Current Image:</p>
+    {% if ram.img %}
+    <img
+      src="{{ url_for('static', filename='images/parts/' + ram.img) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image:</p>
+    <input type="file" name="img" />
+
+    <p>Current Image1:</p>
+    {% if ram.img1 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/ram/' + ram.img1) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image1:</p>
+    <input type="file" name="img1" />
+
+    <p>Current Image2:</p>
+    {% if ram.img2 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/ram/' + ram.img2) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image2:</p>
+    <input type="file" name="img2" />
+
+    
+
+    <p>Current Image3:</p>
+    {% if ram.img3 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/ram/' + ram.img3) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image3:</p>
+    <input type="file" name="img3" />
+
+    
+    <p>Current Image4:</p>
+    {% if ram.img4 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/ram/' + ram.img4) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image4:</p>
+    <input type="file" name="img4" />
+
+    <p>Current Brand Image:</p>
+    {% if ram.brandimg and ram.brandimg != "default_img.webp" %}
+    <img
+      src="{{ url_for('static', filename='images/brands/' + ram.brandimg) }}"
+      width="100"
+      alt="Brand logo"
+    />
+    {% else %}
+    <p><em>No custom brand image uploaded yet</em></p>
+    {% endif %}
+
+    <p>Upload New Brand Image (optional):</p>
+    <input type="file" name="brandimg" accept="image/*" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</center>
+{% endblock %}

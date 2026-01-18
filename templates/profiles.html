@@ -1,0 +1,64 @@
+{% extends "base.html" %} {% block head %}
+<title>Profiles</title>
+<link rel="stylesheet" href="../static/css/reset.css" />
+<link rel="stylesheet" href="../static/css/profiles.css" />
+<link rel="stylesheet" href="../static/css/media/mediaprofiles.css">
+{% endblock %} {% block body %}
+<h1 style="color: white; margin: 50px 0; text-align: center; font-size: 40px">
+  Profiles
+</h1>
+<main>
+  {% for profile in profiles %}
+  <div class="person">
+    <div class="txt">
+      <div class="up">
+        <p>Name : {{ profile['username'] }}</p>
+        <p>Role : {{ profile['role'] }}</p>
+      </div>
+      <div class="down">
+        <button
+          class="openBtn"
+          data-id="{{ profile.id }}"
+          data-name="{{ profile.username }}"
+          data-role="{{ profile.role }}"
+          data-email="{{ profile.email }}"
+        >
+          Open Profile
+        </button>
+
+        <a
+          href="{{ url_for('delete_profile', profile_id=profile['id']) }}"
+          onclick="return confirm('Delete this profile?');"
+          title="Delete"
+        >
+          <i class="fa-solid fa-trash-can"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span id="closeBtn">&times;</span>
+      <img
+        src="{{ url_for('static', filename='images/' + (profile.image)) }}"
+      />
+      <div class="info">
+        <h1 id="popup-title"></h1>
+        <p id="popup-name"></p>
+        <p id="popup-role"></p>
+        <p id="popup-email"></p>
+      </div>
+      <a
+        id="popup-delete"
+        href="#"
+        onclick="return confirm('Delete this profile?');"
+        title="Delete"
+      >
+        <i class="fa-solid fa-trash-can"></i>
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</main>
+<script src="../static/js/popup.js"></script>
+{% endblock %}

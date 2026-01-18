@@ -1,0 +1,10 @@
+@media (max-width: 450px) {
+    .popup{
+        form{
+            width: 320px;
+            input{
+            width: 100px;
+        }
+        }
+    }
+}

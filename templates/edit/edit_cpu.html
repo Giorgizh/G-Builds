@@ -1,0 +1,170 @@
+{% extends "base.html" %} {% block head %}
+<title>Edit CPU</title>
+<link rel="stylesheet" href="../../static/css/reset.css" />
+<link rel="stylesheet" href="../../static/css/edit.css" />
+<link rel="stylesheet" href="../../static/css/media/mediaedit.css" />
+{% endblock %} {% block body %}
+<div class="ii">
+  <a onclick="history.back()">
+    <i style="color: white" class="fa-solid fa-arrow-left fa-2xl"></i>
+  </a>
+</div>
+<center>
+  <h1
+    style="text-align: center; color: white; font-size: 30px; padding-top: 30px"
+  >
+    Edit CPU
+  </h1>
+  <form method="POST" enctype="multipart/form-data">
+    <input name="name" value="{{ cpu.name }}" placeholder="Name" required />
+
+    <input
+      name="price"
+      type="number"
+      step="0.01"
+      value="{{ cpu.price }}"
+      placeholder="Price"
+      required
+    />
+
+    <input
+      name="description"
+      value="{{ cpu.description }}"
+      placeholder="Description"
+    />
+
+    <input name="brand" value="{{ cpu.brand }}" placeholder="Brand" />
+
+    <input
+      name="cpu_type"
+      value="{{ cpu.cpu_type }}"
+      placeholder="CPU Type (e.g. Intel Core i7, AMD Ryzen 9)"
+    />
+
+    <input
+      name="cpu_model"
+      value="{{ cpu.cpu_model }}"
+      placeholder="Model (e.g. 13700K, 7950X)"
+    />
+
+    <input
+      name="socket"
+      value="{{ cpu.socket }}"
+      placeholder="Socket (e.g. LGA 1700, AM5)"
+    />
+
+    <input
+      name="cores_threads"
+      value="{{ cpu.cores_threads }}"
+      placeholder="Cores / Threads (e.g. 16/24)"
+    />
+
+    <input
+      name="integrated_graphics"
+      value="{{ cpu.integrated_graphics }}"
+      placeholder="Integrated Graphics (Yes/No or model name)"
+    />
+
+    <input
+      name="condition"
+      value="{{ cpu.condition }}"
+      placeholder="Condition (New / Used / Refurbished)"
+    />
+
+    <p>Current Image:</p>
+    {% if cpu.img %}
+    <img
+      src="{{ url_for('static', filename='images/parts/' + cpu.img) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image:</p>
+    <input type="file" name="img" />
+
+    <p>Current Image1:</p>
+    {% if cpu.img1 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/cpu/' + cpu.img1) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image1:</p>
+    <input type="file" name="img1" />
+
+    <p>Current Image2:</p>
+    {% if cpu.img2 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/cpu/' + cpu.img2) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image2:</p>
+    <input type="file" name="img2" />
+
+    
+
+    <p>Current Image3:</p>
+    {% if cpu.img3 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/cpu/' + cpu.img3) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image3:</p>
+    <input type="file" name="img3" />
+
+    
+    <p>Current Image4:</p>
+    {% if cpu.img4 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/cpu/' + cpu.img4) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image4:</p>
+    <input type="file" name="img4" />
+
+    <p>Current Brand Image:</p>
+    {% if cpu.brandimg %}
+    <img
+      src="{{ url_for('static', filename='images/brands/' + cpu.brandimg) }}"
+      width="100"
+      alt="Brand logo"
+    />
+    {% else %}
+    <p><em>No brand image uploaded yet</em></p>
+    {% endif %}
+
+    <p>Upload New Brand Image (optional):</p>
+    <input type="file" name="brandimg" accept="image/*" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</center>
+
+{% endblock %}

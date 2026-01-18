@@ -1,0 +1,287 @@
+body {
+  background-color: white;
+  max-width: 1600px;
+  margin: 0 auto;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flash-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+  overflow: hidden; 
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  min-width: 250px;
+  max-width: 350px;
+  pointer-events: auto; 
+  transform: translateX(100%); 
+  animation: slideIn 0.5s forwards, fadeOut 0.5s 4.5s forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+
+.alert .icon {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.alert-success {
+  background-color: #4caf50;
+}
+
+.alert-error,
+.alert-danger {
+  background-color: #f44336;
+}
+
+.alert-warning {
+  background-color: #ff9800;
+  color: black;
+}
+
+.alert-info {
+  background-color: #2196f3;
+}
+header {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color: white;
+  z-index: 2;
+}
+.upper {
+  background-color: lightgray;
+  display: flex;
+  height: 30px;
+  align-items: center;
+  padding-left: 200px;
+  gap: 40px;
+  font-weight: 700;
+}
+.upper i,
+.upper a {
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
+  color: #555;
+  color: #555;
+}
+.head {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 50px;
+}
+.head img {
+  width: 150px;
+}
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid #f50057;
+  border-radius: 50px;
+  overflow: hidden;
+  width: 500px;
+  height: 45px;
+}
+.search-box input {
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+}
+.search-box button {
+  height: 100%;
+  width: 60px;
+  border: none;
+  font-size: 18px;
+  color: white;
+  background-color: #f50057;
+  cursor: pointer;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #454545;
+}
+.top {
+  display: none;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  a {
+    color: #454545;
+  }
+  p {
+    display: none;
+  }
+}
+.icons-wrapper {
+  position: relative;
+}
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon-wrap {
+  position: relative;
+  line-height: 1;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-weight: 700;
+  min-width: 16px;
+  text-align: center;
+}
+
+.nav-item p {
+  margin: 4px 0 0;
+  font-size: 13px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+footer {
+  background-color: white;
+}
+.foot {
+  background-color: #f50057;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+.foot h1 {
+  font-size: 20px;
+  color: white;
+}
+.foot p {
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+}
+.foot img {
+  width: 40px;
+  border-radius: 50%;
+}
+.left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.left p {
+  padding-top: 11px;
+}
+
+.right {
+  display: flex;
+  gap: 15px;
+}
+
+.fooot {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.low {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+.low p {
+  font-size: 20px;
+  font-weight: 700;
+}
+.low img {
+  width: 50%;
+}
+.low h1 {
+  font-size: 30px;
+}
+
+.bottom {
+  font-weight: 700;
+  line-height: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.marj {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.marj i,
+.marj a {
+  padding-right: 5px;
+  color: #555;
+}

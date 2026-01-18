@@ -1,0 +1,262 @@
+.price-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .price-inputs {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    gap: 10px;
+  }
+  input {
+    padding-left: 10px;
+    height: 30px;
+    width: 100px;
+    border: 2px solid red;
+    border-radius: 15px;
+  }
+  strong {
+    font-weight: 700;
+    color: #5f5f5f;
+  }
+}
+.mobo {
+  margin: 50px 0px;
+  display: flex;
+  h1 {
+    font-weight: 500;
+    font-size: 25px;
+    color: #555;
+  }
+  .buto {
+    display: none;
+  }
+  button {
+    border-radius: 5px;
+    border: none;
+    background-color: #d8d8d8;
+    color: black;
+    cursor: pointer;
+    font-weight: 800;
+    width: 70px;
+    height: 32px;
+    transition: 0.5s all ease;
+  }
+  button:hover {
+    color: white;
+    background-color: red;
+  }
+}
+.filter {
+  padding-left: 50px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  h1 {
+    color: #555;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  h2 {
+    color: #555;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.list input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.list label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.list label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #f50057;
+  border-radius: 4px;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.list label::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 12px;
+  border: solid #121212;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.list input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+
+.list input[type="checkbox"]:checked + label::before {
+  background-color: #f50057;
+}
+.rightmb {
+  .mb {
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  select {
+    border-radius: 15px;
+    height: 30px;
+    width: 215px;
+    text-align: center;
+    border-color: #c4c4c4;
+    font-weight: 700;
+    color: #555;
+    font-size: 15px;
+  }
+}
+.nawilebi {
+  display: flex;
+  gap: 15px;
+  margin: 30px 0px;
+  justify-content: start;
+  flex-wrap: wrap;
+  a {
+    color: #f50057;
+    padding-left: 10px;
+  }
+}
+.parts {
+  position: relative;
+  border: 2px solid rgb(255, 0, 21);
+  width: 280px;
+  border-radius: 10px;
+  height: 330px;
+  transition: 0.5s all ease;
+  h1 {
+    color: #f50057;
+    font-size: 15px;
+  }
+  h2 {
+    color: #f50057;
+    font-size: 20px;
+  }
+  p {
+    font-weight: 700;
+    color: #555;
+    font-size: 15px;
+    list-style: none;
+    display: inline-block;
+    margin: 0 25px;
+    position: relative;
+  }
+  p::after {
+    content: "";
+    height: 3px;
+    width: 0;
+    background: #f50057;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: 0.5s;
+  }
+  .bottom {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 50%;
+  }
+}
+p::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #f50057;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: 0.5s;
+}
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  img {
+    padding-top: 20px;
+    max-height: 120px;
+    max-width: 120px;
+  }
+}
+.parts:hover {
+  box-shadow: 0px 0px 15px rgb(255, 0, 21);
+  p::after {
+    width: 100%;
+  }
+}
+.txt {
+  bottom: 80px;
+  width: 280px;
+  height: 70px;
+  left: 0;
+  position: absolute;
+  line-height: 20px;
+}
+.actions {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 25px;
+  width: 280px;
+  a{
+    padding-left: 0;
+    font-size: 20px;
+  }
+  h2 {
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    a{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  form{
+    display: flex;
+    align-items: center;
+  }
+  button{
+    font-size: 19px;
+    width: 20px;
+  }
+}

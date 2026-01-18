@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% block head %}
+<title>Results for "{{ q }}"</title>
+<link rel="stylesheet" href="../static/css/reset.css" />
+<link rel="stylesheet" href="../static/css/search.css" />
+<link rel="stylesheet" href="../static/css/media/mediapart.css" />
+{% endblock %} {% block body %}
+<h3>Results For "{{ q }}"</h3>
+<hr />
+<div class="nawilebi">
+  {% if results is defined %} {% set any_results = false %} {% for category,
+  items in results.items() %} {% if items %} {% set any_results = true %} {% for
+  item in items %}
+  <div class="parts">
+    <a class="lnk" href="/{{ category|lower }}/{{ item.id }}">
+      <div class="image">
+        <img
+          src="{{ url_for('static', filename='images/parts/' + item.img) }}"
+        />
+      </div>
+      <div class="bottom">
+        <div class="txt">
+          <h1>{{ item.product_type | upper }}</h1>
+          <p>{{ item.name }}</p>
+        </div>
+        <div class="actions">
+          <h2>
+            ${{ '%.2f'|format(item.price) }}
+            <form method="POST" action="{{ url_for('add_to_cart') }}">
+              <input type="hidden" name="product_id" value="{{ item.id }}" />
+              <input type="hidden" name="name" value="{{ item.name }}" />
+              <input type="hidden" name="price" value="{{ item.price }}" />
+              <input
+                type="hidden"
+                name="product_type"
+                value="{{ item.product_type }}"
+              />
+              <button
+                type="submit"
+                class="icon-link"
+                style="border: none; background: none; padding: 0; cursor: pointer;"
+              >
+                <i class="fa-solid fa-cart-plus" style="color: #f50057"></i>
+              </button>
+              <a href="#" class="icon-link">
+                <i class="fa-regular fa-heart" style="color: #f50057"></i>
+              </a>
+              {% if current_user.role == "Admin" %}
+              <a
+                href="{{ url_for('delete_' ~ item.product_type, product_id=item.id) }}"
+                onclick="return confirm('Delete this product?');"
+              >
+                <i class="fa-solid fa-trash-can" style="color: #f50057"></i>
+              </a>
+              <a
+                href="{{ url_for('edit_' ~ item.product_type, product_id=item.id) }}"
+                title="Edit"
+              >
+                <i class="fa-solid fa-pen-to-square" style="color: #f50057"></i>
+              </a>
+              {% endif %}
+            </form>
+          </h2>
+        </div>
+      </div>
+    </a>
+  </div>
+  {% endfor %} {% endif %} {% endfor %} {% endif %}
+</div>
+{% endblock %}

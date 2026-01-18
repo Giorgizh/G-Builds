@@ -1,0 +1,165 @@
+{% extends "base.html" %} {% block head %}
+<title>Edit cooler Cooler</title>
+<link rel="stylesheet" href="../../static/css/reset.css" />
+<link rel="stylesheet" href="../../static/css/edit.css" />
+<link rel="stylesheet" href="../../static/css/media/mediaedit.css" />
+{% endblock %} {% block body %}
+<div class="ii">
+  <a onclick="history.back()">
+    <i style="color: white" class="fa-solid fa-arrow-left fa-2xl"></i>
+  </a>
+</div>
+
+<center>
+  <h1
+    style="text-align: center; color: white; font-size: 30px; padding-top: 30px"
+  >
+    Edit cooler Cooler
+  </h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input name="name" value="{{ cooler.name }}" placeholder="Name" required />
+
+    <input
+      name="price"
+      type="number"
+      step="0.01"
+      value="{{ cooler.price }}"
+      placeholder="Price"
+      required
+    />
+
+    <input
+      name="description"
+      value="{{ cooler.description }}"
+      placeholder="Description"
+    />
+
+    <input name="brand" value="{{ cooler.brand }}" placeholder="Brand" />
+
+    <input
+      name="cooler_type"
+      value="{{ cooler.cooler_type }}"
+      placeholder="Cooler Type (Air / AIO)"
+    />
+
+    <input
+      name="radiator_size"
+      value="{{ cooler.radiator_size }}"
+      placeholder="Radiator Size (e.g. 240mm, 360mm, or N/A for air coolers)"
+    />
+
+    <input
+      name="fan_size"
+      value="{{ cooler.fan_size }}"
+      placeholder="Fan Size (e.g. 120mm, 140mm, Dual 120mm)"
+    />
+
+    <input
+      name="noise_level"
+      value="{{ cooler.noise_level }}"
+      placeholder="Noise Level (e.g. 25 dBA, 18-35 dBA)"
+    />
+
+    <input
+      name="condition"
+      value="{{ cooler.condition }}"
+      placeholder="Condition (New / Used / Refurbished)"
+    />
+
+    <p>Current Image:</p>
+    {% if cooler.img %}
+    <img
+      src="{{ url_for('static', filename='images/parts/' + cooler.img) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image:</p>
+    <input type="file" name="img" />
+
+    <p>Current Image1:</p>
+    {% if cooler.img1 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/cpucooler/' + cooler.img1) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image1:</p>
+    <input type="file" name="img1" />
+
+    <p>Current Image2:</p>
+    {% if cooler.img2 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/cpucooler/' + cooler.img2) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image2:</p>
+    <input type="file" name="img2" />
+
+    
+
+    <p>Current Image3:</p>
+    {% if cooler.img3 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/cpucooler/' + cooler.img3) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image3:</p>
+    <input type="file" name="img3" />
+
+    
+    <p>Current Image4:</p>
+    {% if cooler.img4 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/cpucooler/' + cooler.img4) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image4:</p>
+    <input type="file" name="img4" />
+
+    <p>Current Brand Image:</p>
+    {% if cooler.brandimg %}
+    <img
+      src="{{ url_for('static', filename='images/brands/' + cooler.brandimg) }}"
+      width="100"
+      alt="Brand logo"
+    />
+    {% else %}
+    <p><em>No brand image uploaded yet</em></p>
+    {% endif %}
+
+    <p>Upload New Brand Image (optional):</p>
+    <input type="file" name="brandimg" accept="image/*" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</center>
+{% endblock %}

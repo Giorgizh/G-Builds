@@ -1,0 +1,154 @@
+{% extends "base.html" %} {% block head %}
+<title>Edit HDD</title>
+<link rel="stylesheet" href="../../static/css/reset.css" />
+<link rel="stylesheet" href="../../static/css/edit.css" />
+<link rel="stylesheet" href="../../static/css/media/mediaedit.css" />
+{% endblock %} {% block body %}
+<div class="ii">
+  <a onclick="history.back()">
+    <i style="color: white" class="fa-solid fa-arrow-left fa-2xl"></i>
+  </a>
+</div>
+
+<center>
+  <h1
+    style="text-align: center; color: white; font-size: 30px; padding-top: 30px"
+  >
+    Edit HDD
+  </h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input name="name" value="{{ hdd.name }}" placeholder="Name" required />
+
+    <input
+      name="price"
+      type="number"
+      step="0.01"
+      value="{{ hdd.price }}"
+      placeholder="Price"
+      required
+    />
+
+    <input
+      name="description"
+      value="{{ hdd.description }}"
+      placeholder="Description"
+    />
+
+    <input
+      name="brand"
+      value="{{ hdd.brand }}"
+      placeholder="Brand (e.g. Seagate, Western Digital, Toshiba)"
+      required
+    />
+
+    <input
+      name="capacity"
+      value="{{ hdd.capacity }}"
+      placeholder="Capacity (e.g. 1TB, 4TB, 8TB)"
+      required
+    />
+
+    <input
+      name="rpm"
+      value="{{ hdd.rpm }}"
+      placeholder="RPM (e.g. 5400, 7200)"
+      required
+    />
+
+    <input
+      name="cache"
+      value="{{ hdd.cache }}"
+      placeholder="Cache (e.g. 64MB, 256MB, N/A)"
+    />
+
+    <input
+      name="interface"
+      value="{{ hdd.interface }}"
+      placeholder="Interface (e.g. SATA 6Gb/s)"
+      required
+    />
+
+    <input
+      name="condition"
+      value="{{ hdd.condition }}"
+      placeholder="Condition (New / Used / Refurbished)"
+    />
+
+    <p>Current Image:</p>
+    {% if hdd.img %}
+    <img
+      src="{{ url_for('static', filename='images/parts/' + hdd.img) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image:</p>
+    <input type="file" name="img" />
+
+    <p>Current Image1:</p>
+    {% if hdd.img1 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/hdd/' + hdd.img1) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image1:</p>
+    <input type="file" name="img1" />
+
+    <p>Current Image2:</p>
+    {% if hdd.img2 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/hdd/' + hdd.img2) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image2:</p>
+    <input type="file" name="img2" />
+
+    <p>Current Image3:</p>
+    {% if hdd.img3 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/hdd/' + hdd.img3) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image3:</p>
+    <input type="file" name="img3" />
+
+    <p>Current Image4:</p>
+    {% if hdd.img4 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/hdd/' + hdd.img4) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image4:</p>
+    <input type="file" name="img4" />
+    <p>Current Brand Image:</p>
+    {% if hdd.brandimg and hdd.brandimg != "default_img.webp" %}
+    <img
+      src="{{ url_for('static', filename='images/brands/' + hdd.brandimg) }}"
+      width="100"
+      alt="Brand logo"
+    />
+    {% else %}
+    <p><em>No custom brand image uploaded yet</em></p>
+    {% endif %}
+
+    <p>Upload New Brand Image (optional):</p>
+    <input type="file" name="brandimg" accept="image/*" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</center>
+{% endblock %}

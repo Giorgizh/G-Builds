@@ -1,0 +1,160 @@
+{% extends "base.html" %} {% block head %}
+<title>Edit PSU</title>
+<link rel="stylesheet" href="../../static/css/reset.css" />
+<link rel="stylesheet" href="../../static/css/edit.css" />
+<link rel="stylesheet" href="../../static/css/media/mediaedit.css" />
+{% endblock %} {% block body %}
+<div class="ii">
+  <a onclick="history.back()">
+    <i style="color: white" class="fa-solid fa-arrow-left fa-2xl"></i>
+  </a>
+</div>
+
+<center>
+  <h1
+    style="text-align: center; color: white; font-size: 30px; padding-top: 30px"
+  >
+    Edit PSU
+  </h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input name="name" value="{{ psu.name }}" placeholder="Name" required />
+
+    <input
+      name="price"
+      type="number"
+      step="0.01"
+      value="{{ psu.price }}"
+      placeholder="Price"
+      required
+    />
+
+    <input
+      name="description"
+      value="{{ psu.description }}"
+      placeholder="Description"
+    />
+
+    <input
+      name="brand"
+      value="{{ psu.brand }}"
+      placeholder="Brand (e.g. Corsair, EVGA, Seasonic)"
+      required
+    />
+
+    <input
+      name="wattage"
+      value="{{ psu.wattage }}"
+      placeholder="Wattage (e.g. 750W, 1000W, 1200W)"
+      required
+    />
+
+    <input
+      name="efficiency"
+      value="{{ psu.efficiency }}"
+      placeholder="Efficiency Rating (e.g. 80+ Bronze, 80+ Gold, 80+ Platinum)"
+      required
+    />
+
+    <input
+      name="modular"
+      value="{{ psu.modular }}"
+      placeholder="Modular (Fully Modular, Semi-Modular, Non-Modular)"
+    />
+
+    <input
+      name="lighting"
+      value="{{ psu.lighting }}"
+      placeholder="Lighting (e.g. RGB, None)"
+    />
+
+    <input
+      name="color"
+      value="{{ psu.color }}"
+      placeholder="Color (e.g. Black, White)"
+    />
+
+    <input
+      name="condition"
+      value="{{ psu.condition }}"
+      placeholder="Condition (New / Used / Refurbished)"
+    />
+
+    <p>Current Image:</p>
+    {% if psu.img %}
+    <img
+      src="{{ url_for('static', filename='images/parts/' + psu.img) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image:</p>
+    <input type="file" name="img" />
+
+    <p>Current Image1:</p>
+    {% if psu.img1 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/psu/' + psu.img1) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image1:</p>
+    <input type="file" name="img1" />
+
+    <p>Current Image2:</p>
+    {% if psu.img2 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/psu/' + psu.img2) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image2:</p>
+    <input type="file" name="img2" />
+
+    <p>Current Image3:</p>
+    {% if psu.img3 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/psu/' + psu.img3) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image3:</p>
+    <input type="file" name="img3" />
+
+    <p>Current Image4:</p>
+    {% if psu.img4 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/psu/' + psu.img4) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image4:</p>
+    <input type="file" name="img4" />
+
+    <p>Current Brand Image:</p>
+    {% if psu.brandimg and psu.brandimg != "default_img.webp" %}
+    <img
+      src="{{ url_for('static', filename='images/brands/' + psu.brandimg) }}"
+      width="100"
+      alt="Brand logo"
+    />
+    {% else %}
+    <p><em>No custom brand image uploaded yet</em></p>
+    {% endif %}
+
+    <p>Upload New Brand Image (optional):</p>
+    <input type="file" name="brandimg" accept="image/*" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</center>
+{% endblock %}

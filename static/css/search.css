@@ -1,0 +1,116 @@
+h3 {
+  margin: 50px;
+  text-align: center;
+  font-size: 30px;
+  text-underline-offset: 5px;
+  text-decoration: underline red;
+}
+.nawilebi {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
+  flex-wrap: wrap;
+  gap: 30px;
+  a {
+    color: #f50057;
+    padding-left: 10px;
+  }
+}
+.parts {
+  position: relative;
+  border: 2px solid rgb(255, 0, 21);
+  width: 280px;
+  border-radius: 10px;
+  height: 330px;
+  transition: 0.5s all ease;
+  h1 {
+    color: #f50057;
+    font-size: 15px;
+  }
+  h2 {
+    color: #f50057;
+    font-size: 20px;
+  }
+  p {
+    font-weight: 700;
+    color: #555;
+    font-size: 15px;
+    list-style: none;
+    display: inline-block;
+    margin: 0 25px;
+    position: relative;
+  }
+  p::after {
+    content: "";
+    height: 3px;
+    width: 0;
+    background: #f50057;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: 0.5s;
+  }
+  .bottom {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 50%;
+  }
+}
+p::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #f50057;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: 0.5s;
+}
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  img {
+    padding-top: 20px;
+    max-height: 120px;
+    max-width: 120px;
+  }
+}
+.parts:hover {
+  box-shadow: 0px 0px 15px rgb(255, 0, 21);
+  p::after {
+    width: 100%;
+  }
+}
+.txt {
+  bottom: 80px;
+  width: 280px;
+  height: 70px;
+  left: 0;
+  position: absolute;
+  line-height: 20px;
+}
+.actions {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 25px;
+  width: 280px;
+  h2 {
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  form {
+    display: flex;
+    align-items: center;
+  }
+  button {
+    font-size: 19px;
+    width: 20px;
+  }
+}

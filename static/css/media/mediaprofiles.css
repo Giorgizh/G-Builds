@@ -1,0 +1,36 @@
+@media (max-width: 720px){
+    .popup-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .info{
+        align-items: center;
+    }
+}
+@media (max-width: 450px){
+    .person{
+        width: 150px;
+        height: 150px;
+        .up{
+            font-size: 17px;
+        }
+        .down{
+            gap: 10px;
+            i{
+                font-size: 20px;
+            }
+            button{
+                width: 100px;
+                
+            }
+        }
+        .txt{
+            gap: 20px;
+        }
+    }
+    .info{
+        p{
+            font-size: 15px;
+        }
+    }
+}

@@ -1,0 +1,184 @@
+{% extends "base.html" %} {% block head %}
+<title>Edit GPU</title>
+<link rel="stylesheet" href="../../static/css/reset.css" />
+<link rel="stylesheet" href="../../static/css/edit.css" />
+<link rel="stylesheet" href="../../static/css/media/mediaedit.css" />
+{% endblock %} {% block body %}
+<div class="ii">
+  <a onclick="history.back()">
+    <i style="color: white" class="fa-solid fa-arrow-left fa-2xl"></i>
+  </a>
+</div>
+
+<center>
+  <h1
+    style="text-align: center; color: white; font-size: 30px; padding-top: 30px"
+  >
+    Edit GPU
+  </h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input name="name" value="{{ gpu.name }}" placeholder="Name" required />
+
+    <input
+      name="price"
+      type="number"
+      step="0.01"
+      value="{{ gpu.price }}"
+      placeholder="Price"
+      required
+    />
+
+    <input
+      name="description"
+      value="{{ gpu.description }}"
+      placeholder="Description"
+    />
+
+    <input
+      name="brand"
+      value="{{ gpu.brand }}"
+      placeholder="Brand (e.g. NVIDIA, AMD, ASUS, MSI)"
+      required
+    />
+
+    <input
+      name="gpu"
+      value="{{ gpu.gpu }}"
+      placeholder="Model (e.g. GeForce RTX 4080, Radeon RX 7900 XTX)"
+      required
+    />
+
+    <input
+      name="memory"
+      value="{{ gpu.memory }}"
+      placeholder="Memory (e.g. 16GB GDDR6X, 24GB GDDR6)"
+      required
+    />
+
+    <input
+      name="numcoolers"
+      value="{{ gpu.numcoolers }}"
+      placeholder="Number of Fans (e.g. 2, 3, 4)"
+    />
+
+    <input
+      name="Ports"
+      value="{{ gpu.Ports }}"
+      placeholder="Ports (e.g. 3x DP, 1x HDMI)"
+    />
+
+    <input
+      name="lighting"
+      value="{{ gpu.lighting }}"
+      placeholder="Lighting (e.g. RGB, ARGB, None)"
+    />
+
+    <input
+      name="color"
+      value="{{ gpu.color }}"
+      placeholder="Color (e.g. Black, White)"
+    />
+
+    <input
+      name="condition"
+      value="{{ gpu.condition }}"
+      placeholder="Condition (New / Used / Refurbished)"
+    />
+
+    <p>Current Image:</p>
+    {% if gpu.img %}
+    <img
+      src="{{ url_for('static', filename='images/parts/' + gpu.img) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image:</p>
+    <input type="file" name="img" />
+
+    <p>Current Image1:</p>
+    {% if gpu.img1 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/gpu/' + gpu.img1) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image1:</p>
+    <input type="file" name="img1" />
+
+    <p>Current Image2:</p>
+    {% if gpu.img2 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/gpu/' + gpu.img2) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image2:</p>
+    <input type="file" name="img2" />
+
+    
+
+    <p>Current Image3:</p>
+    {% if gpu.img3 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/gpu/' + gpu.img3) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image3:</p>
+    <input type="file" name="img3" />
+
+    
+    <p>Current Image4:</p>
+    {% if gpu.img4 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/gpu/' + gpu.img4) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image4:</p>
+    <input type="file" name="img4" />
+
+    <p>Current Brand Image:</p>
+    {% if gpu.brandimg and gpu.brandimg != "default_img.webp" %}
+    <img
+      src="{{ url_for('static', filename='images/brands/' + gpu.brandimg) }}"
+      width="100"
+      alt="Brand logo"
+    />
+    {% else %}
+    <p><em>No custom brand image uploaded yet</em></p>
+    {% endif %}
+
+    <p>Upload New Brand Image (optional):</p>
+    <input type="file" name="brandimg" accept="image/*" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</center>
+{% endblock %}

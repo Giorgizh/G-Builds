@@ -1,0 +1,156 @@
+{% extends "base.html" %} {% block head %}
+<title>Edit SSD</title>
+<link rel="stylesheet" href="../../static/css/reset.css" />
+<link rel="stylesheet" href="../../static/css/edit.css" />
+<link rel="stylesheet" href="../../static/css/media/mediaedit.css" />
+{% endblock %} {% block body %}
+<div class="ii">
+  <a onclick="history.back()">
+    <i style="color: white" class="fa-solid fa-arrow-left fa-2xl"></i>
+  </a>
+</div>
+
+<center>
+  <h1
+    style="text-align: center; color: white; font-size: 30px; padding-top: 30px"
+  >
+    Edit SSD
+  </h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input name="name" value="{{ ssd.name }}" placeholder="Name" required />
+
+    <input
+      name="price"
+      type="number"
+      step="0.01"
+      value="{{ ssd.price }}"
+      placeholder="Price"
+      required
+    />
+
+    <input
+      name="description"
+      value="{{ ssd.description }}"
+      placeholder="Description"
+    />
+
+    <input
+      name="brand"
+      value="{{ ssd.brand }}"
+      placeholder="Brand (e.g. Samsung, WD, Crucial, Kingston)"
+      required
+    />
+
+    <input
+      name="capacity"
+      value="{{ ssd.capacity }}"
+      placeholder="Capacity (e.g. 500GB, 1TB, 2TB, 4TB)"
+      required
+    />
+
+    <input
+      name="read_speed"
+      value="{{ ssd.read_speed }}"
+      placeholder="Read Speed (e.g. 3500 MB/s, 7000 MB/s)"
+      required
+    />
+
+    <input
+      name="write_speed"
+      value="{{ ssd.write_speed }}"
+      placeholder="Write Speed (e.g. 3000 MB/s, 6900 MB/s)"
+      required
+    />
+
+    <input
+      name="interface"
+      value="{{ ssd.interface }}"
+      placeholder="Interface (e.g. PCIe 4.0 NVMe, PCIe 5.0 NVMe, SATA)"
+      required
+    />
+
+    <input
+      name="condition"
+      value="{{ ssd.condition }}"
+      placeholder="Condition (New / Used / Refurbished)"
+    />
+
+    <p>Current Image:</p>
+    {% if ssd.img %}
+    <img
+      src="{{ url_for('static', filename='images/parts/' + ssd.img) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image:</p>
+    <input type="file" name="img" />
+
+    <p>Current Image1:</p>
+    {% if ssd.img1 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/ssd/' + ssd.img1) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image1:</p>
+    <input type="file" name="img1" />
+
+    <p>Current Image2:</p>
+    {% if ssd.img2 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/ssd/' + ssd.img2) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image2:</p>
+    <input type="file" name="img2" />
+
+    <p>Current Image3:</p>
+    {% if ssd.img3 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/ssd/' + ssd.img3) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image3:</p>
+    <input type="file" name="img3" />
+
+    <p>Current Image4:</p>
+    {% if ssd.img4 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/ssd/' + ssd.img4) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image4:</p>
+    <input type="file" name="img4" />
+
+    <p>Current Brand Image:</p>
+    {% if ssd.brandimg and ssd.brandimg != "default_img.webp" %}
+    <img
+      src="{{ url_for('static', filename='images/brands/' + ssd.brandimg) }}"
+      width="100"
+      alt="Brand logo"
+    />
+    {% else %}
+    <p><em>No custom brand image uploaded yet</em></p>
+    {% endif %}
+
+    <p>Upload New Brand Image (optional):</p>
+    <input type="file" name="brandimg" accept="image/*" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</center>
+{% endblock %}

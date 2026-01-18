@@ -1,0 +1,193 @@
+@media (max-width: 1225px) {
+  .shop {
+    width: 60%;
+  }
+  .info {
+    width: 70%;
+  }
+}
+@media (max-width: 1000px) {
+  .cart {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .cart {
+    justify-content: center;
+  }
+  .checkout {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+  .checkout-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 1000px) {
+  .cart {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .shop {
+    width: 100%;
+  }
+  .items {
+    width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .shop {
+    width: 100%;
+  }
+  .items {
+    width: 100%;
+    display: flex;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 30px;
+    color: #545454;
+    transition: 0.5s;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    p {
+      transition: 0.3s;
+    }
+    p:hover {
+      color: red;
+    }
+    .ck {
+      align-items: center;
+      width: 50%;
+    }
+  }
+  .checkout {
+    max-width: 95%;
+    margin: 1rem auto;
+    text-align: center;
+  }
+  .checkout h1 {
+    font-size: 1.4rem;
+  }
+  .checkout-row span {
+    font-size: 1rem;
+  }
+  .checkout button {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 620px) {
+  .cart {
+    margin: 30px;
+  }
+
+  .items {
+    padding: 15px;
+    gap: 0;
+    flex-direction: column;
+    .info {
+      p {
+        font-size: 12px;
+        width: 100%;
+      }
+    }
+    a {
+      max-width: 100%;
+      padding-top: 10px;
+      padding-bottom: 0;
+    }
+    .rght {
+      justify-content: center;
+      gap: 0;
+    }
+    .md {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      button {
+        z-index: 2;
+      }
+      label {
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        gap: 5px;
+        input {
+          width: 30px;
+        }
+      }
+    }
+    .ck {
+      align-items: center;
+      flex-direction: row-reverse;
+      p{
+        font-size: 18px;
+      }
+    }
+    .wd {
+      align-items: center;
+      flex-direction: row;
+    }
+    img {
+      height: 80px;
+      width: 80px;
+    }
+  }
+  .checkout h1 {
+    font-size: 1.2rem;
+  }
+  .checkout-row span {
+    font-size: 0.95rem;
+  }
+  .checkout button {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+@media (max-width: 480px) {
+  .shop {
+    justify-content: center;
+  }
+  .count {
+    justify-content: center;
+  }
+  .items {
+    height: 170px;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .md {
+    gap: 5px;
+    button {
+      width: 50px;
+      font-size: 8px;
+    }
+  }
+  .ck {
+    form {
+      width: 50px;
+      button {
+        font-size: 8px;
+      }
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  .items {
+    gap: 15px;
+    a {
+      height: 90px;
+    }
+    .info {
+      height: 80px;
+      p {
+        font-size: 10px;
+      }
+    }
+  }
+}

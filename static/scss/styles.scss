@@ -1,0 +1,57 @@
+.pcpart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.pcpart h1 {
+  color: black;
+  padding-top: 20px;
+  font-weight: 700;
+  padding-bottom: 20px;
+  font-size: 50px;
+}
+
+.parts {
+  padding-top: 10px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.parts:hover p::after {
+  width: 100%;
+}
+.parts img {
+  width: 150px;
+}
+.parts p {
+  text-align: center;
+  font-weight: 700;
+  color: #555;
+  list-style: none;
+  display: inline-block;
+  margin: 0 25px;
+  position: relative;
+}
+.parts p::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #f50057;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+}
+
+.nawilebi {
+  border-radius: 25px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 40px;
+}

@@ -1,0 +1,200 @@
+{% extends "base.html" %} {% block head %}
+<title>{{ cpucool.name }}</title>
+<link rel="stylesheet" href="../static/css/reset.css" />
+<link rel="stylesheet" href="../static/css/product/style.css" />
+<link rel="stylesheet" href="../static/css/media/product/style.css" />
+{% endblock %} {% block body %}
+<main>
+  <div class="ii">
+    <a onclick="history.back()"
+      ><i class="fa-solid fa-arrow-left fa-2xl"></i
+    ></a>
+  </div>
+  <div class="mobo">
+    <div class="img">
+      <div class="nawili">
+        <img
+          id="mainImage"
+          src="{{ url_for('static', filename='images/parts/' + (cpucool.img or 'default_img.webp')) }}"
+        />
+      </div>
+      <div class="down">
+        <a href="#" onclick="changeImage(this); return false;">
+          <img
+            src="{{ url_for('static', filename='images/parts/' + cpucool.img) }}"
+          />
+        </a>
+        {% for img_field in [cpucool.img1, cpucool.img2, cpucool.img3,
+        cpucool.img4] %} {% if img_field and img_field != 'default_img.webp' %}
+        <a href="#" onclick="changeImage(this); return false;">
+          <img
+            src="{{ url_for('static', filename='images/parts/cpucooler/' + img_field) }}"
+          />
+        </a>
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+    <div class="spec">
+      <div class="smallones">
+        <h1>Cpu Cooler</h1>
+        <p>{{cpucool.name}}</p>
+        <h2>{{cpucool.description}}</h2>
+        <img
+          src="{{ url_for('static', filename='images/brands/' + cpucool.brandimg) }}"
+        />
+      </div>
+      <strong></strong>
+      <div class="rs">
+        <div class="scndspec">
+          <form method="POST" action="{{ url_for('add_to_wishlist') }}">
+            <input
+              type="hidden"
+              name="product_id"
+              value="{{ cpucool.id }}"
+            />
+            <input type="hidden" name="name" value="{{ cpucool.name }}" />
+            <input type="hidden" name="price" value="{{ cpucool.price }}" />
+            <input type="hidden" name="product_type" value="cpucooler" />
+            <button
+              type="submit"
+              style="border: none; background: none; cursor: pointer"
+            >
+              <i class="fa-regular fa-heart fa-xl" style="color: #454545"></i>
+              Wish List
+            </button>
+          </form>
+        </div>
+        <div class="price">
+          <p>${{cpucool.price}}</p>
+        </div>
+        <form method="POST">
+          <input type="hidden" name="product_id" value="{{ cpucool.id }}" />
+          <input type="hidden" name="name" value="{{ cpucool.name }}" />
+          <input type="hidden" name="price" value="{{ cpucool.price }}" />
+          <input type="hidden" name="product_type" value="cpucooler" />
+          <div class="pay">
+             {% if cpucool.stock == 0 %}
+            <p style="color: red; font-weight: bold">Not in stock</p>
+            {% else %}
+            <input
+              type="number"
+              name="quantity"
+              value="1"
+              min="1"
+              max="{{ cpucool.stock }}"
+              required
+            />
+            <button
+              type="submit"
+              formaction="{{ url_for('add_to_cart') }}"
+              formmethod="POST"
+            >
+              <i class="fa-solid fa-bag-shopping"></i>
+              Add to cart
+            </button>
+            <button
+              type="submit"
+              formaction="{{ url_for('buy_now') }}"
+              formmethod="POST"
+            >
+              <i class="fa-solid fa-bag-shopping"></i>
+              Buy now
+            </button>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="spc">
+    <h1>Specification</h1>
+    <div class="a">
+      <div class="specification">
+        <ul>
+          <li>Brand</li>
+          <li>Cooler Type</li>
+          <li>Radiator size</li>
+          <li>Fan Size</li>
+          <li>Noise Level</li>
+          <li>Condition</li>
+        </ul>
+        <ul>
+          <li>{{cpucool.brand}}</li>
+          <li>{{cpucool.cooler_type}}</li>
+          <li>{{cpucool.radiator_size}}</li>
+          <li>{{cpucool.fan_size}}</li>
+          <li>{{cpucool.noise_level}}</li>
+          <li>{{cpucool.condition}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <center>
+    <div class="comments">
+      <h1>Comments</h1>
+      {% if current_user.is_authenticated %}
+      <form class="form" method="POST">
+        <hr style="text-align: center; width: 600px" />
+        <div class="stars">
+          {% for i in range(5, 0, -1) %}
+          <input
+            type="radio"
+            id="star{{ i }}"
+            name="rating"
+            value="{{ i }}"
+            required
+          />
+          <label for="star{{ i }}"><i class="fa-regular fa-star"></i></label>
+          {% endfor %}
+        </div>
+        <div class="send">
+          <textarea
+            name="text"
+            placeholder="Write a comment..."
+            required
+          ></textarea>
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+      </form>
+      {% endif %}
+      <div class="comment">
+        {% for comment in comments %}
+        <div class="id">
+          <div class="split">
+            <img
+              src="{{ url_for('static', filename='images/' + (comment.user.image or 'default.png')) }}"
+            />
+            <h2>{{ comment.user.username }}</h2>
+            <div class="rating">
+              {% for _ in range(comment.rating) %}
+              <i class="fa-regular fa-star"></i> {% endfor %}
+            </div>
+          </div>
+          <p>{{ comment.text }}</p>
+          {% if current_user.role == "Admin" %}
+          <form
+            class="delete"
+            method="POST"
+            action="{{ url_for('delete_comment', comment_id=comment.id) }}"
+            style="display: inline"
+          >
+            <button
+              onclick="return confirm('Delete this comment?')"
+              type="submit"
+              class="delete-btn"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </form>
+          {% endif %}
+        </div>
+        {% else %}
+        <p class="none">No comments yet.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </center>
+</main>
+<script src="../../static/js/zoom.js"></script>
+<script src="../../static/js/slider.js"></script>
+{% endblock %}

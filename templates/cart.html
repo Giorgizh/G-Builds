@@ -1,0 +1,127 @@
+{% extends "base.html" %} {% block head %}
+<title>Shopping Cart</title>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/reset.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/cart.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/media/mediawishlistXcart.css') }}"
+/>
+{% endblock %} {% block body %}
+<main>
+  <div class="cart">
+    <div class="shop">
+      <div class="count">
+        <h1>Shopping Cart</h1>
+        <p>({{ cart|length }} Item{% if cart|length != 1 %}s{% endif %})</p>
+      </div>
+      {% if cart %} {% for item in cart %}
+      <div class="items">
+        <a href="/{{ item.product_type }}/{{ item.product_id }}">
+          <img
+            src="{{ url_for('static', filename='images/parts/' + (item.img or 'placeholder.png')) }}"
+          />
+          <div class="info">
+            <p>{{ item.name }}</p>
+          </div>
+        </a>
+        <div class="rght">
+          <form
+            class="md"
+            method="POST"
+            action="{{ url_for('update_cart_quantity', cart_item_id=item.id) }}"
+          >
+            <label>
+              Quantity:
+              <input
+                type="number"
+                name="quantity"
+                value="{{ item.quantity }}"
+                min="1"
+                max="{{ item.stock }}"
+                class="qty-input"
+              />
+            </label>
+            <button type="submit" class="update-btn hidden">Update</button>
+          </form>
+          <div class="ck">
+            <p>${{ '%.2f'|format(item.price * item.quantity) }}</p>
+            <div class="wd">
+              <form
+                method="POST"
+                action="{{ url_for('move_to_wishlist', cart_item_id=item.id) }}"
+              >
+                <button
+                  type="submit"
+                  style="background-color: #ff9800; border: 2px solid #ff9800"
+                >
+                  <i class="fa-regular fa-heart"></i> WISHLIST
+                </button>
+              </form>
+              <form
+                method="POST"
+                action="{{ url_for('remove_from_cart', cart_item_id=item.id) }}"
+              >
+                <button type="submit" class="can">
+                  <i class="fa-solid fa-trash-can"></i> REMOVE
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %} {% else %}
+      <div class="none">
+        <p>Your cart is empty,</p>
+        <a href="/">Browse Products</a>
+      </div>
+      {% endif %}
+    </div>
+    <div class="checkout">
+      <h1>
+        Order Summary
+        <span class="secure"> <i class="fa-solid fa-lock"></i> Secure </span>
+      </h1>
+      <div class="checkout-row">
+        <span>Estimated Total</span>
+        <span class="checkout-total">${{ '%.2f'|format(total) }}</span>
+      </div>
+      <div class="payment-icons">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
+        <i class="fa-brands fa-cc-amex"></i>
+      </div>
+      <form method="POST" action="{{ url_for('checkout') }}">
+        {% if total|float == 0 %}
+        <button type="submit" disabled>Checkout</button>
+        {% else %}
+        <button type="submit">Checkout</button>
+        {% endif %}
+      </form>
+      <p class="checkout-note">Taxes and shipping calculated at checkout</p>
+    </div>
+  </div>
+</main>
+<script>
+  document.querySelectorAll(".md").forEach((form) => {
+    const input = form.querySelector(".qty-input");
+    const button = form.querySelector(".update-btn");
+
+    const originalValue = input.value;
+
+    input.addEventListener("input", () => {
+      if (input.value !== originalValue) {
+        button.classList.remove("hidden");
+      } else {
+        button.classList.add("hidden");
+      }
+    });
+  });
+</script>
+{% endblock %}

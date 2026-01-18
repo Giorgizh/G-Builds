@@ -1,0 +1,89 @@
+{% extends "base.html" %} {% block head %}
+<title>Wishlist</title>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/reset.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/cart.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/media/mediawishlistXcart.css') }}"
+/>
+{% endblock %} {% block body %}
+<main>
+  <div class="cart">
+    <div class="shop">
+      <div class="count">
+        <h1>Wishlist</h1>
+        <p>
+          ({{ wishlist_items|length }} Item{% if wishlist_items|length != 1
+          %}s{% endif %})
+        </p>
+      </div>
+      {% if wishlist_items %} {% for item in wishlist_items %}
+      <div class="items">
+        <a href="/{{ item.product_type }}/{{ item.product_id }}">
+          <img
+            src="{{ url_for('static', filename='images/parts/' + (item.img or 'placeholder.png')) }}"
+          />
+          <div class="info">
+            <p>{{ item.name }}</p>
+          </div>
+        </a>
+        <div class="rght">
+          <div class="ck">
+            <p>${{ '%.2f'|format(item.price) }}</p>
+            <div class="wd">
+              <form
+                method="POST"
+                action="{{ url_for('remove_from_wishlist', wishlist_item_id=item.id) }}"
+              >
+                <button type="submit" class="can">
+                  <i class="fa-solid fa-trash-can"></i> REMOVE
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %} {% else %}
+      <div class="none">
+        <p>Your wishlist is empty,</p>
+        <a href="/">Browse Products</a>
+      </div>
+      {% endif %}
+    </div>
+    <div class="checkout">
+      <h1>
+        Wishlist Summary
+        <span class="secure"
+          ><i class="fa-solid fa-heart"></i> Your Favorites</span
+        >
+      </h1>
+      <div class="checkout-row">
+        <span>Total Items</span>
+        <span class="checkout-total">{{ wishlist_items|length }}</span>
+      </div>
+      <div class="payment-icons">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
+        <i class="fa-brands fa-cc-amex"></i>
+      </div>
+      <form method="POST" action="{{ url_for('checkout_from_wishlist') }}">
+        {% if wishlist_items|length == 0 %}
+        <button type="submit" disabled>Checkout</button>
+        {% else %}
+        <button type="submit">Checkout All</button>
+        {% endif %}
+      </form>
+      <p class="checkout-note">
+        You can move items from wishlist to cart to purchase.
+      </p>
+    </div>
+  </div>
+</main>
+{% endblock %}

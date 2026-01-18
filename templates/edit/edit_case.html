@@ -1,0 +1,150 @@
+{% extends "base.html" %} {% block head %}
+<title>Edit PC Case</title>
+<link rel="stylesheet" href="../../static/css/reset.css" />
+<link rel="stylesheet" href="../../static/css/edit.css" />
+<link rel="stylesheet" href="../../static/css/media/mediaedit.css" />
+{% endblock %} {% block body %}
+<div class="ii">
+  <a onclick="history.back()">
+    <i style="color: white" class="fa-solid fa-arrow-left fa-2xl"></i>
+  </a>
+</div>
+
+<center>
+  <h1
+    style="text-align: center; color: white; font-size: 30px; padding-top: 30px"
+  >
+    Edit PC Case
+  </h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input
+      name="name"
+      value="{{ case_item.name }}"
+      placeholder="Name"
+      required
+    />
+
+    <input
+      name="price"
+      type="number"
+      step="0.01"
+      value="{{ case_item.price }}"
+      placeholder="Price"
+      required
+    />
+
+    <input
+      name="description"
+      value="{{ case_item.description }}"
+      placeholder="Description"
+    />
+
+    <input
+      name="brand"
+      value="{{ case_item.brand }}"
+      placeholder="Brand (e.g. NZXT, Corsair, Fractal Design, Lian Li)"
+    />
+
+    <input
+      name="compatability"
+      value="{{ case_item.compatability }}"
+      placeholder="Motherboard Compatibility (e.g. ATX, mATX, mini-ITX, E-ATX)"
+    />
+
+    <input
+      name="casetype"
+      value="{{ case_item.casetype }}"
+      placeholder="Case Type (e.g. Mid Tower, Full Tower, Mini Tower)"
+    />
+
+    <input
+      name="color"
+      value="{{ case_item.color }}"
+      placeholder="Color (e.g. Black, White, RGB)"
+    />
+
+    <input
+      name="condition"
+      value="{{ case_item.condition }}"
+      placeholder="Condition (New / Used / Refurbished)"
+    />
+
+    <p>Current Image:</p>
+    {% if case_item.img %}
+    <img
+      src="{{ url_for('static', filename='images/parts/' + case_item.img) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image:</p>
+    <input type="file" name="img" />
+
+    <p>Current Image1:</p>
+    {% if case_item.img1 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/case/' + case_item.img1) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image1:</p>
+    <input type="file" name="img1" />
+
+    <p>Current Image2:</p>
+    {% if case_item.img2 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/case/' + case_item.img2) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image2:</p>
+    <input type="file" name="img2" />
+
+    <p>Current Image3:</p>
+    {% if case_item.img3 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/case/' + case_item.img3) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image3:</p>
+    <input type="file" name="img3" />
+
+    <p>Current Image4:</p>
+    {% if case_item.img4 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/case/' + case_item.img4) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image4:</p>
+    <input type="file" name="img4" />
+
+    <p>Current Brand Image:</p>
+    {% if case_item.brandimg and case_item.brandimg != "default_img.webp" %}
+    <img
+      src="{{ url_for('static', filename='images/brands/' + case_item.brandimg) }}"
+      width="100"
+      alt="Brand logo"
+    />
+    {% else %}
+    <p><em>No custom brand image uploaded yet</em></p>
+    {% endif %}
+
+    <p>Upload New Brand Image (optional):</p>
+    <input type="file" name="brandimg" accept="image/*" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</center>
+{% endblock %}

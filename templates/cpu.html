@@ -1,0 +1,227 @@
+{% extends "base.html" %} {% block head %}
+<title>CPU</title>
+<link rel="stylesheet" href="../static/css/reset.css" />
+<link rel="stylesheet" href="../static/css/part.css" />
+<link rel="stylesheet" href="../static/css/media/mediapart.css" />
+{% endblock %} {% block body %}
+<main>
+  <div class="mobo">
+    <button class="buto" onclick="javascript:hideShow()">
+      <i class="fa-solid fa-bars"></i>Filters
+    </button>
+    <form method="GET" action="/cpu">
+      <div id="filter" class="filter">
+        <h2>Filters</h2>
+        <div class="price-filter">
+          <strong>Price</strong>
+          <div class="price-inputs">
+            <input
+              type="number"
+              name="min_price"
+              placeholder="Min"
+              min="0"
+              value="{{ selected_min_price if selected_min_price is not none }}"
+            />
+            <input
+              type="number"
+              name="max_price"
+              placeholder="Max"
+              min="0"
+              value="{{ selected_max_price if selected_max_price is not none }}"
+            />
+          </div>
+          <button type="submit">Filter</button>
+        </div>
+        <h1>Brand</h1>
+        <div class="brand">
+          {% for brand in unique_brands %}
+          <div class="list">
+            <input
+              type="checkbox"
+              id="brand-{{ brand | replace(' ', '-') }}"
+              name="brand"
+              value="{{ brand }}"
+              {%
+              if
+              brand.upper()
+              in
+              selected_brands
+              %}checked{%
+              endif
+              %}
+            />
+            <label for="brand-{{ brand | replace(' ', '-') }}"
+              >{{ brand }}</label
+            >
+          </div>
+          {% endfor %}
+        </div>
+
+        <h1>Condition</h1>
+        <div class="brand">
+          {% for condition in unique_conditions %}
+          <div class="list">
+            <input
+              type="checkbox"
+              id="cond-{{ condition | replace(' ', '-') }}"
+              name="condition"
+              value="{{ condition }}"
+              {%
+              if
+              condition.lower()
+              in
+              selected_conditions
+              %}checked{%
+              endif
+              %}
+            />
+            <label for="cond-{{ condition | replace(' ', '-') }}"
+              >{{ condition }}</label
+            >
+          </div>
+          {% endfor %}
+        </div>
+
+        <h1>Socket</h1>
+        <div class="brand">
+          {% for socket in unique_sockets %}
+          <div class="list">
+            <input
+              type="checkbox"
+              id="socket-{{ socket | replace(' ', '-') }}"
+              name="socket"
+              value="{{ socket }}"
+              {%
+              if
+              socket.upper()
+              in
+              selected_sockets
+              %}checked{%
+              endif
+              %}
+            />
+            <label for="socket-{{ socket | replace(' ', '-') }}"
+              >{{ socket }}</label
+            >
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </form>
+    <div class="rightmb">
+      <form class="mb" method="get">
+        <h1>Cpu</h1>
+        <select name="sort" onchange="this.form.submit()">
+          <option value="">Sort by</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="newest">Newest</option>
+          <option value="latest">Latest</option>
+        </select>
+      </form>
+      <div class="nawilebi">
+        {% for cpu in cpus %}
+        <div class="parts">
+          <div class="card">
+            <a href="{{ url_for('cpu_detailed', product_id=cpu.id) }}">
+              <div class="image">
+                <img
+                  src="{{ url_for('static', filename='images/parts/' + (cpu.image or 'placeholder.png')) }}"
+                />
+              </div>
+              <div class="bottom">
+                <div class="txt">
+                  <h1>CPU</h1>
+                  <p>{{ cpu.name }}</p>
+                </div>
+                <div class="actions">
+                  <h2>
+                    {% if (cpu.stock|int) == 0 %}
+                    <strong style="color: red; font-weight: bold"
+                      >Not in stock</strong
+                    >
+                    {% else %} ${{ '%.2f'|format(cpu.price) }}
+                    <form method="POST" action="{{ url_for('add_to_cart') }}">
+                      <input
+                        type="hidden"
+                        name="product_id"
+                        value="{{ cpu.id }}"
+                      />
+                      <input type="hidden" name="name" value="{{ cpu.name }}" />
+                      <input
+                        type="hidden"
+                        name="price"
+                        value="{{ cpu.price }}"
+                      />
+                      <input type="hidden" name="product_type" value="cpu" />
+                      <button
+                        type="submit"
+                        class="icon-link"
+                        style="border: none; background: none; padding: 0"
+                      >
+                        <i
+                          class="fa-solid fa-cart-plus"
+                          style="color: #f50057"
+                        ></i>
+                      </button>
+                    </form>
+                    <form
+                      method="POST"
+                      action="{{ url_for('add_to_wishlist') }}"
+                    >
+                      <input
+                        type="hidden"
+                        name="product_id"
+                        value="{{ cpu.id }}"
+                      />
+                      <input type="hidden" name="name" value="{{ cpu.name }}" />
+                      <input
+                        type="hidden"
+                        name="price"
+                        value="{{ cpu.price }}"
+                      />
+                      <input type="hidden" name="product_type" value="cpu" />
+                      <button
+                        type="submit"
+                        class="icon-link"
+                        style="border: none; background: none; padding: 0"
+                      >
+                        <i
+                          class="fa-regular fa-heart"
+                          style="color: #f50057"
+                        ></i>
+                      </button>
+                    </form>
+                    {% if current_user.role == "Admin" %}
+                    <a
+                      href="{{ url_for('delete_cpu', product_id=cpu.id) }}"
+                      onclick="return confirm('Delete this product?');"
+                      title="Delete"
+                    >
+                      <i
+                        class="fa-solid fa-trash-can"
+                        style="color: #f50057"
+                      ></i>
+                    </a>
+                    <a
+                      href="{{ url_for('edit_cpu', product_id=cpu.id) }}"
+                      title="Edit"
+                    >
+                      <i
+                        class="fa-solid fa-pen-to-square"
+                        style="color: #f50057"
+                      ></i>
+                    </a>
+                    {% endif %}{% endif %}
+                  </h2>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

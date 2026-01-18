@@ -1,0 +1,150 @@
+@media (max-width: 1230px) {
+  .mobo {
+    gap: 50px;
+  }
+}
+@media (max-width: 1130px) {
+  .spec {
+    width: 500px;
+  }
+  .smallones {
+    width: 500px;
+  }
+  .pay {
+    input {
+      width: 100px;
+    }
+    button {
+      width: 150px;
+      font-size: 15px;
+      gap: 5px;
+    }
+  }
+}
+@media (max-width: 1020px) {
+  .spec {
+    width: 350px;
+  }
+  .smallones {
+    width: 350px;
+    p {
+      font-size: 22px;
+    }
+  }
+  .pay {
+    gap: 10px;
+  }
+}
+@media (max-width: 857px) {
+  .mobo {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+  .down {
+    width: 500px;
+  }
+  .spec {
+    width: 700px;
+  }
+  .smallones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    p {
+      font-size: 25px;
+    }
+    h2 {
+      text-align: center;
+    }
+  }
+  .pay {
+    justify-content: center;
+    gap: 25px;
+    button {
+      width: 200px;
+      gap: 10px;
+    }
+  }
+}
+@media (max-width: 720px) {
+  .spec {
+    width: 500px;
+  }
+  .specification {
+    width: 400px;
+    gap: 100px;
+  }
+  .scndspec {
+    display: flex;
+    justify-content: center;
+  }
+  .price {
+    display: flex;
+    justify-content: center;
+  }
+  .pay {
+    flex-direction: column;
+    input {
+      width: 250px;
+    }
+    button {
+      width: 300px;
+    }
+  }
+  .comments {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    hr {
+      display: none;
+    }
+  }
+  .comment {
+    width: 300px;
+  }
+}
+@media (max-width: 540px) {
+  .img {
+    width: 320px;
+    .nawili {
+      width: 320px;
+      img {
+        width: 320px;
+      }
+    }
+    .down {
+      width: 320px;
+      flex-wrap: wrap;
+    }
+  }
+  .smallones {
+    width: 320px;
+    h1 {
+      font-size: 25px;
+    }
+    p {
+      text-align: center;
+    }
+  }
+  .spec {
+    align-items: center;
+  }
+  textarea {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .send {
+    width: 300px;
+    textarea {
+      width: 300px;
+    }
+  }
+  .spec{
+    width: 320px;
+  }
+}

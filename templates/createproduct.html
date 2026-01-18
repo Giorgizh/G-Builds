@@ -1,0 +1,535 @@
+{% extends "base.html" %} {% block head %}
+<title>Create Product</title>
+<link rel="stylesheet" href="../static/css/reset.css" />
+<link rel="stylesheet" href="../static/css/create.css" />
+<link rel="stylesheet" href="../static/css/media/mediacreate.css" />
+{% endblock%} {% block body %}
+<h1
+  style="padding-top: 50px; color: white; font-size: 40px; text-align: center"
+>
+  Create Product
+</h1>
+<main>
+  <div class="select">
+    <div class="mobo" onclick="openmobo()">Motherboard</div>
+    <div class="cpu" onclick="opencpu()">Cpu</div>
+    <div class="cpucooler" onclick="opencpucooler()">Cpu Cooler</div>
+    <div class="ram" onclick="openram()">Ram</div>
+    <div class="gpu" onclick="opengpu()">Gpu</div>
+    <div class="psu" onclick="openpsu()">Psu</div>
+    <div class="hdd" onclick="openhdd()">Hdd</div>
+    <div class="ssd" onclick="openssd()">Ssd</div>
+    <div class="m2" onclick="openm2()">M2</div>
+    <div class="case" onclick="opencase()">Case</div>
+    <div class="cooler" onclick="opencooler()">Cooler</div>
+  </div>
+
+  <div id="moboPopup" class="popup">
+    <form
+      method="POST"
+      action="/motherboards/create"
+      enctype="multipart/form-data"
+    >
+      <input name="name" placeholder="Name" required />
+      <input
+        name="price"
+        placeholder="Price"
+        type="number"
+        step="0.01"
+        required
+      />
+      <input name="description" placeholder="description" />
+      <input name="brand" placeholder="brand" />
+      <input name="socket" placeholder="socket" />
+      <input name="chipset" placeholder="chipset" />
+      <input name="ram_type" placeholder="ram_type" />
+      <input name="ram_slots" placeholder="ram_slots" />
+      <input name="wifi" placeholder="wifi" />
+      <input name="motherboard_size" placeholder="motherboard_size" />
+      <input name="condition" placeholder="condition" />
+      <input name="stock" placeholder="stock">
+      <div class="images">
+        <p>Image</p>
+        <input type="file" name="img" />
+        <p>Image1</p>
+        <input type="file" name="img1" />
+        <p>Image2</p>
+        <input type="file" name="img2" />
+        <p>Image3</p>
+        <input type="file" name="img3" />
+        <p>Image4</p>
+        <input type="file" name="img4" />
+        <p>Brand Image</p>
+        <input type="file" name="brandimg" />
+      </div>
+      <button class="save" type="submit">Save</button>
+      <button class="cancel" type="button" onclick="closeMobo()">Cancel</button>
+    </form>
+  </div>
+  <div id="cpuPopup" class="popup">
+    <form method="POST" action="/cpus/create" enctype="multipart/form-data">
+      <input name="name" placeholder="Name" required />
+      <input
+        name="price"
+        placeholder="Price"
+        type="number"
+        step="0.01"
+        required
+      />
+      <input name="description" placeholder="description" />
+      <input name="brand" placeholder="Brand" />
+      <input name="cpu_type" placeholder="Type" />
+      <input name="cpu_model" placeholder="Model" />
+      <input name="socket" placeholder="Socket" />
+      <input name="cores_threads" placeholder="Cores/Threads" />
+      <input name="integrated_graphics" placeholder="Integrated Graphics" />
+      <input name="condition" placeholder="Condition" />
+      <input name="stock" placeholder="stock" />
+      <div class="images">
+        <p>Image</p>
+        <input type="file" name="img" />
+        <p>Image1</p>
+        <input type="file" name="img1" />
+        <p>Image2</p>
+        <input type="file" name="img2" />
+        <p>Image3</p>
+        <input type="file" name="img3" />
+        <p>Image4</p>
+        <input type="file" name="img4" />
+        <p>Brand Image</p>
+        <input type="file" name="brandimg" />
+      </div>
+      <button class="save" type="submit">Save</button>
+      <button class="cancel" type="button" onclick="closecpu()">Cancel</button>
+    </form>
+  </div>
+  <div id="cpuCoolerPopup" class="popup">
+    <form
+      method="POST"
+      action="/cpucoolers/create"
+      enctype="multipart/form-data"
+    >
+      <input name="name" placeholder="Name" required />
+      <input
+        name="price"
+        placeholder="Price"
+        type="number"
+        step="0.01"
+        required
+      />
+      <input name="description" placeholder="Description" />
+      <input name="brand" placeholder="Brand" />
+      <input name="cooler_type" placeholder="Cooler Type (Air / Liquid)" />
+      <input name="radiator_size" placeholder="Radiator Size (e.g. 240mm)" />
+      <input name="fan_size" placeholder="Fan Size (e.g. 120mm)" />
+      <input name="noise_level" placeholder="Noise Level (dB)" />
+      <input name="condition" placeholder="Condition" />
+      <input name="stock" placeholder="stock" />
+      <div class="images">
+        <p>Image</p>
+        <input type="file" name="img" />
+        <p>Image1</p>
+        <input type="file" name="img1" />
+        <p>Image2</p>
+        <input type="file" name="img2" />
+        <p>Image3</p>
+        <input type="file" name="img3" />
+        <p>Image4</p>
+        <input type="file" name="img4" />
+        <p>Brand Image</p>
+        <input type="file" name="brandimg" />
+      </div>
+      <button class="save" type="submit">Save</button>
+      <button class="cancel" type="button" onclick="closeCpuCooler()">
+        Cancel
+      </button>
+    </form>
+  </div>
+  <div id="ramPopup" class="popup">
+    <form method="POST" action="/rams/create" enctype="multipart/form-data">
+      <input name="name" placeholder="Name" required />
+      <input
+        name="price"
+        placeholder="Price"
+        type="number"
+        step="0.01"
+        required
+      />
+      <input name="description" placeholder="Description" />
+      <input name="brand" placeholder="Brand" />
+      <input name="ram_type" placeholder="RAM Type (DDR4 / DDR5)" />
+      <input name="capacity" placeholder="Capacity (e.g. 16GB)" />
+      <input name="speed" placeholder="Speed (e.g. 3200MHz)" />
+      <input name="lighting" placeholder="Lighting (RGB / No)" />
+      <input name="Color" placeholder="Color" />
+      <input name="condition" placeholder="Condition" />
+      <input name="stock" placeholder="stock" />
+      <div class="images">
+        <p>Image</p>
+        <input type="file" name="img" />
+        <p>Image1</p>
+        <input type="file" name="img1" />
+        <p>Image2</p>
+        <input type="file" name="img2" />
+        <p>Image3</p>
+        <input type="file" name="img3" />
+        <p>Image4</p>
+        <input type="file" name="img4" />
+        <p>Brand Image</p>
+        <input type="file" name="brandimg" />
+      </div>
+      <button class="save" type="submit">Save</button>
+      <button class="cancel" type="button" onclick="closeRam()">Cancel</button>
+    </form>
+  </div>
+  <div id="gpuPopup" class="popup">
+    <form method="POST" action="/gpus/create" enctype="multipart/form-data">
+      <input name="name" placeholder="Name" required />
+      <input
+        name="price"
+        placeholder="Price"
+        type="number"
+        step="0.01"
+        required
+      />
+      <input name="description" placeholder="Description" />
+      <input name="brand" placeholder="Brand" />
+      <input name="gpu" placeholder="GPU Model (e.g. RTX 4070)" />
+      <input name="memory" placeholder="Memory (e.g. 12GB GDDR6X)" />
+      <input name="numcoolers" placeholder="Number of Coolers" type="number" />
+      <input name="Ports" placeholder="Ports (HDMI / DP)" />
+      <input name="lighting" placeholder="Lighting (RGB / No)" />
+      <input name="color" placeholder="Color" />
+      <input name="condition" placeholder="Condition" />
+      <input name="stock" placeholder="stock" />
+      <div class="images">
+        <p>Image</p>
+        <input type="file" name="img" />
+        <p>Image1</p>
+        <input type="file" name="img1" />
+        <p>Image2</p>
+        <input type="file" name="img2" />
+        <p>Image3</p>
+        <input type="file" name="img3" />
+        <p>Image4</p>
+        <input type="file" name="img4" />
+        <p>Brand Image</p>
+        <input type="file" name="brandimg" />
+      </div>
+      <button class="save" type="submit">Save</button>
+      <button class="cancel" type="button" onclick="closeGpu()">Cancel</button>
+    </form>
+  </div>
+  <div id="psuPopup" class="popup">
+    <form method="POST" action="/psus/create" enctype="multipart/form-data">
+      <input name="name" placeholder="Name" required />
+      <input
+        name="price"
+        placeholder="Price"
+        type="number"
+        step="0.01"
+        required
+      />
+      <input name="description" placeholder="Description" />
+      <input name="brand" placeholder="Brand" />
+      <input name="wattage" placeholder="Wattage (e.g. 750W)" type="number" />
+      <input name="efficiency" placeholder="Efficiency (80+ Gold)" />
+      <input name="modular" placeholder="Modular (Full / Semi / No)" />
+      <input name="lighting" placeholder="Lighting (RGB / No)" />
+      <input name="color" placeholder="Color" />
+      <input name="condition" placeholder="Condition" />
+      <input name="stock" placeholder="stock" />
+      <div class="images">
+        <p>Image</p>
+        <input type="file" name="img" />
+        <p>Image1</p>
+        <input type="file" name="img1" />
+        <p>Image2</p>
+        <input type="file" name="img2" />
+        <p>Image3</p>
+        <input type="file" name="img3" />
+        <p>Image4</p>
+        <input type="file" name="img4" />
+        <p>Brand Image</p>
+        <input type="file" name="brandimg" />
+      </div>
+      <button class="save" type="submit">Save</button>
+      <button class="cancel" type="button" onclick="closePsu()">Cancel</button>
+    </form>
+  </div>
+  <div id="hddPopup" class="popup">
+    <form method="POST" action="/hdds/create" enctype="multipart/form-data">
+      <input name="name" placeholder="Name" required />
+      <input
+        name="price"
+        placeholder="Price"
+        type="number"
+        step="0.01"
+        required
+      />
+      <input name="description" placeholder="Description" />
+      <input name="brand" placeholder="Brand" />
+      <input name="capacity" placeholder="Capacity (e.g. 1TB)" />
+      <input name="rpm" placeholder="RPM (e.g. 7200)" />
+      <input name="cache" placeholder="Cache (e.g. 64MB)" />
+      <input name="interface" placeholder="Interface (SATA III)" />
+      <input name="condition" placeholder="Condition" />
+      <input name="stock" placeholder="stock" />
+      <div class="images">
+        <p>Image</p>
+        <input type="file" name="img" />
+        <p>Image1</p>
+        <input type="file" name="img1" />
+        <p>Image2</p>
+        <input type="file" name="img2" />
+        <p>Image3</p>
+        <input type="file" name="img3" />
+        <p>Image4</p>
+        <input type="file" name="img4" />
+        <p>Brand Image</p>
+        <input type="file" name="brandimg" />
+      </div>
+      <button class="save" type="submit">Save</button>
+      <button class="cancel" type="button" onclick="closeHdd()">Cancel</button>
+    </form>
+  </div>
+  <div id="ssdPopup" class="popup">
+    <form method="POST" action="/ssds/create" enctype="multipart/form-data">
+      <input name="name" placeholder="Name" required />
+      <input
+        name="price"
+        placeholder="Price"
+        type="number"
+        step="0.01"
+        required
+      />
+      <input name="description" placeholder="Description" />
+      <input name="brand" placeholder="Brand" />
+      <input name="capacity" placeholder="Capacity (e.g. 1TB)" />
+      <input name="read_speed" placeholder="Read Speed (e.g. 3500MB/s)" />
+      <input name="write_speed" placeholder="Write Speed (e.g. 3000MB/s)" />
+      <input name="interface" placeholder="Interface (e.g. NVMe)" />
+      <input name="condition" placeholder="Condition" />
+      <input name="stock" placeholder="stock" />
+      <div class="images">
+        <p>Image</p>
+        <input type="file" name="img" />
+        <p>Image1</p>
+        <input type="file" name="img1" />
+        <p>Image2</p>
+        <input type="file" name="img2" />
+        <p>Image3</p>
+        <input type="file" name="img3" />
+        <p>Image4</p>
+        <input type="file" name="img4" />
+        <p>Brand Image</p>
+        <input type="file" name="brandimg" />
+      </div>
+      <button class="save" type="submit">Save</button>
+      <button class="cancel" type="button" onclick="closeSsd()">Cancel</button>
+    </form>
+  </div>
+  <div id="m2Popup" class="popup">
+    <form method="POST" action="/m2s/create" enctype="multipart/form-data">
+      <input name="name" placeholder="Name" required />
+      <input
+        name="price"
+        placeholder="Price"
+        type="number"
+        step="0.01"
+        required
+      />
+      <input name="description" placeholder="Description" />
+      <input name="brand" placeholder="Brand" />
+      <input name="capacity" placeholder="Capacity (e.g. 1TB)" />
+      <input name="read_speed" placeholder="Read Speed (e.g. 3500MB/s)" />
+      <input name="write_speed" placeholder="Write Speed (e.g. 3000MB/s)" />
+      <input name="interface" placeholder="Interface (e.g. NVMe)" />
+      <input name="condition" placeholder="Condition" />
+      <input name="stock" placeholder="stock" />
+      <div class="images">
+        <p>Image</p>
+        <input type="file" name="img" />
+        <p>Image1</p>
+        <input type="file" name="img1" />
+        <p>Image2</p>
+        <input type="file" name="img2" />
+        <p>Image3</p>
+        <input type="file" name="img3" />
+        <p>Image4</p>
+        <input type="file" name="img4" />
+        <p>Brand Image</p>
+        <input type="file" name="brandimg" />
+      </div>
+      <button class="save" type="submit">Save</button>
+      <button class="cancel" type="button" onclick="closeM2()">Cancel</button>
+    </form>
+  </div>
+  <div id="casePopup" class="popup">
+    <form method="POST" action="/cases/create" enctype="multipart/form-data">
+      <input name="name" placeholder="Name" required />
+      <input
+        name="price"
+        placeholder="Price"
+        type="number"
+        step="0.01"
+        required
+      />
+      <input name="description" placeholder="Description" />
+      <input name="brand" placeholder="Brand" />
+      <input
+        name="compatability"
+        placeholder="Compatibility (e.g. ATX / Micro-ATX)"
+      />
+      <input name="casetype" placeholder="Case Type (e.g. Mid Tower)" />
+      <input name="color" placeholder="Color" />
+      <input name="condition" placeholder="Condition" />
+      <input name="stock" placeholder="stock" />
+      <div class="images">
+        <p>Image</p>
+        <input type="file" name="img" />
+        <p>Image1</p>
+        <input type="file" name="img1" />
+        <p>Image2</p>
+        <input type="file" name="img2" />
+        <p>Image3</p>
+        <input type="file" name="img3" />
+        <p>Image4</p>
+        <input type="file" name="img4" />
+        <p>Brand Image</p>
+        <input type="file" name="brandimg" />
+      </div>
+      <button class="save" type="submit">Save</button>
+      <button class="cancel" type="button" onclick="closeCase()">Cancel</button>
+    </form>
+  </div>
+  <div id="coolerPopup" class="popup">
+    <form method="POST" action="/coolers/create" enctype="multipart/form-data">
+      <input name="name" placeholder="Name" required />
+      <input
+        name="price"
+        placeholder="Price"
+        type="number"
+        step="0.01"
+        required
+      />
+      <input name="description" placeholder="Description" />
+      <input name="brand" placeholder="Brand" />
+      <input name="numoffans" placeholder="Number of Fans" type="number" />
+      <input name="size" placeholder="Size (e.g. 120mm)" />
+      <input name="lighting" placeholder="Lighting (RGB / No)" />
+      <input name="color" placeholder="Color" />
+      <input name="condition" placeholder="Condition" />
+      <input name="stock" placeholder="stock" />
+      <div class="images">
+        <p>Image</p>
+        <input type="file" name="img" />
+        <p>Image1</p>
+        <input type="file" name="img1" />
+        <p>Image2</p>
+        <input type="file" name="img2" />
+        <p>Image3</p>
+        <input type="file" name="img3" />
+        <p>Image4</p>
+        <input type="file" name="img4" />
+        <p>Brand Image</p>
+        <input type="file" name="brandimg" />
+      </div>
+      <button class="save" type="submit">Save</button>
+      <button class="cancel" type="button" onclick="closeCooler()">
+        Cancel
+      </button>
+    </form>
+  </div>
+</main>
+<script>
+  function openmobo() {
+    document.getElementById("moboPopup").style.display = "flex";
+    document.getElementById("moboPopup").style.justifyContent = "center";
+    document.getElementById("moboPopup").style.alignItems = "center";
+  }
+  function closeMobo() {
+    document.getElementById("moboPopup").style.display = "none";
+  }
+  function opencpu() {
+    document.getElementById("cpuPopup").style.display = "flex";
+    document.getElementById("cpuPopup").style.justifyContent = "center";
+    document.getElementById("cpuPopup").style.alignItems = "center";
+  }
+  function closecpu() {
+    document.getElementById("cpuPopup").style.display = "none";
+  }
+  function opencpucooler() {
+    document.getElementById("cpuCoolerPopup").style.display = "flex";
+    document.getElementById("cpuCoolerPopup").style.justifyContent = "center";
+    document.getElementById("cpuCoolerPopup").style.alignItems = "center";
+  }
+  function closeCpuCooler() {
+    document.getElementById("cpuCoolerPopup").style.display = "none";
+  }
+  function openram() {
+    document.getElementById("ramPopup").style.display = "flex";
+    document.getElementById("ramPopup").style.justifyContent = "center";
+    document.getElementById("ramPopup").style.alignItems = "center";
+  }
+  function closeRam() {
+    document.getElementById("ramPopup").style.display = "none";
+  }
+  function opengpu() {
+    document.getElementById("gpuPopup").style.display = "flex";
+    document.getElementById("gpuPopup").style.justifyContent = "center";
+    document.getElementById("gpuPopup").style.alignItems = "center";
+  }
+  function closeGpu() {
+    document.getElementById("gpuPopup").style.display = "none";
+  }
+  function openpsu() {
+    document.getElementById("psuPopup").style.display = "flex";
+    document.getElementById("psuPopup").style.justifyContent = "center";
+    document.getElementById("psuPopup").style.alignItems = "center";
+  }
+  function closePsu() {
+    document.getElementById("psuPopup").style.display = "none";
+  }
+  function openhdd() {
+    document.getElementById("hddPopup").style.display = "flex";
+    document.getElementById("hddPopup").style.justifyContent = "center";
+    document.getElementById("hddPopup").style.alignItems = "center";
+  }
+  function closeHdd() {
+    document.getElementById("hddPopup").style.display = "none";
+  }
+  function openssd() {
+    document.getElementById("ssdPopup").style.display = "flex";
+    document.getElementById("ssdPopup").style.justifyContent = "center";
+    document.getElementById("ssdPopup").style.alignItems = "center";
+  }
+  function closeSsd() {
+    document.getElementById("ssdPopup").style.display = "none";
+  }
+  function openm2() {
+    document.getElementById("m2Popup").style.display = "flex";
+    document.getElementById("m2Popup").style.justifyContent = "center";
+    document.getElementById("m2Popup").style.alignItems = "center";
+  }
+  function closeM2() {
+    document.getElementById("m2Popup").style.display = "none";
+  }
+  function opencase() {
+    document.getElementById("casePopup").style.display = "flex";
+    document.getElementById("casePopup").style.justifyContent = "center";
+    document.getElementById("casePopup").style.alignItems = "center";
+  }
+  function closeCase() {
+    document.getElementById("casePopup").style.display = "none";
+  }
+  function opencooler() {
+    document.getElementById("coolerPopup").style.display = "flex";
+    document.getElementById("coolerPopup").style.justifyContent = "center";
+    document.getElementById("coolerPopup").style.alignItems = "center";
+  }
+  function closeCooler() {
+    document.getElementById("coolerPopup").style.display = "none";
+  }
+</script>
+{% endblock %}

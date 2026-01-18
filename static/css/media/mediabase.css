@@ -1,0 +1,207 @@
+@media (max-width: 937px) {
+  .icons {
+    gap: 30px;
+  }
+}
+@media (max-width: 857px) {
+  .head {
+    img {
+      width: 100px;
+    }
+    .search-box {
+      height: 40px;
+      width: 200px;
+    }
+  }
+}
+@media (max-width: 807px) {
+  .upper {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+  }
+  .foot {
+    .left {
+      gap: 20px;
+      h1 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 11px;
+      }
+    }
+  }
+  .fooot {
+    .low {
+      width: 240px;
+    }
+    .marj {
+      font-size: 12px;
+    }
+    .bottom {
+      font-size: 13px;
+    }
+  }
+  .right {
+    img {
+      width: 25px;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .upper {
+    p {
+      font-size: 15px;
+    }
+  }
+  .icons {
+    font-size: 12px;
+    gap: 20px;
+  }
+  .head {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .search-box {
+    input {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .upper {
+    display: none;
+  }
+  .top {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    position: absolute;
+    bottom: 130px;
+    a{
+      font-size: 15px;
+    }
+  }
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    p {
+      font-weight: 700;
+    }
+  }
+  .nav-item{
+    flex-direction: row;
+    p{
+      font-size: 20px;
+    }
+  }
+
+  body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+  .icons {
+    position: fixed;
+    display: none;
+    top: 97px;
+    width: 50%;
+    height: 100vh;
+    background: white;
+    font-size: 18px;
+    flex-direction: column;
+    margin-top: 1px;
+    padding: 20px;
+    gap: 18px;
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 900;
+    p {
+      display: block;
+    }
+    a {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+  .icons.show {
+    right: 0;
+    display: flex;
+    font-size: 20px;
+    align-items: flex-start;
+    i {
+      font-size: 20px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .head {
+    gap: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .icons {
+    i {
+      font-size: 18px;
+    }
+  }
+  .menu-toggle {
+    p {
+      display: none;
+    }
+  }
+  .foot {
+    .left {
+      i {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 8px;
+      }
+      p {
+        font-size: 8px;
+      }
+    }
+    .right {
+      img {
+        width: 15px;
+      }
+    }
+  }
+  .fooot {
+    .low {
+      width: 130px;
+      p {
+        font-size: 15px;
+      }
+      h1 {
+        font-size: 15px;
+      }
+    }
+  }
+}
+@media (max-width: 420px) {
+  .icons {
+    gap: 10px;
+    i {
+      font-size: 15px;
+    }
+  }
+  .parts {
+    width: 160px;
+  }
+  .upper {
+    a {
+      font-size: 18px;
+    }
+    p {
+      display: none;
+    }
+  }
+}

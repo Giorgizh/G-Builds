@@ -1,0 +1,170 @@
+@media (max-width: 1400px) {
+  .if {
+    iframe {
+      width: 700px;
+    }
+  }
+}
+@media (max-width: 1280px) {
+  .if {
+    iframe {
+      width: 500px;
+    }
+  }
+}
+@media (max-width: 1080px) {
+  .contact {
+    flex-wrap: wrap;
+    div {
+      display: flex;
+      flex-direction: column;
+      h1 {
+        font-size: 25px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+  .if {
+    iframe {
+      width: 500px;
+    }
+  }
+}
+@media (max-width: 980px) {
+  .contact {
+    padding-left: 0;
+    flex-wrap: wrap;
+    div {
+      align-items: center;
+      h1 {
+        font-size: 30px;
+      }
+      p {
+        font-size: 25px;
+      }
+    }
+  }
+  .if {
+    iframe {
+      display: flex;
+      align-items: center;
+      width: 700px;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .search-box {
+    button {
+      display: none;
+    }
+  }
+  .icons {
+    gap: 20px;
+  }
+  .if {
+    iframe {
+      display: flex;
+      align-items: center;
+      height: 500px;
+      width: 600px;
+    }
+  }
+  .foot {
+    .left {
+      gap: 20px;
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+@media (max-width: 635px) {
+  .search-box {
+    button {
+      display: none;
+    }
+  }
+  .icons {
+    gap: 15px;
+  }
+  .head {
+    a {
+      img {
+        width: 100px;
+      }
+    }
+  }
+  .search-box {
+    input {
+      font-size: 12px;
+    }
+  }
+  .if {
+    iframe {
+      display: flex;
+      align-items: center;
+      height: 400px;
+      width: 400px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .head {
+    gap: 20px;
+  }
+  .upper {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+  }
+  .contact {
+    div {
+      h1 {
+        font-size: 25px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+  .if {
+    iframe {
+      display: flex;
+      align-items: center;
+      height: 320px;
+      width: 320px;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .icons {
+    i {
+      font-size: 18px;
+    }
+  }
+  .foot {
+    .left {
+      i {
+        font-size: 15px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+    .right {
+      img {
+        width: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 400px) {
+  .icons {
+    gap: 10px;
+    i {
+      font-size: 15px;
+    }
+  }
+}

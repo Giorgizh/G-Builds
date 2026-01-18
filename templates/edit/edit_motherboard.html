@@ -1,0 +1,144 @@
+{% extends "base.html" %} {% block head %}
+<title>Edit Motherboard</title>
+<link rel="stylesheet" href="../../static/css/reset.css" />
+<link rel="stylesheet" href="../../static/css/edit.css" />
+<link rel="stylesheet" href="../../static/css/media/mediaedit.css" />
+{% endblock %} {% block body %}
+<div class="ii">
+  <a onclick="history.back()"
+    ><i style="color: white" class="fa-solid fa-arrow-left fa-2xl"></i
+  ></a>
+</div>
+<center>
+  <h1
+    style="text-align: center; color: white; font-size: 30px; padding-top: 30px"
+  >
+    Edit Motherboard
+  </h1>
+  <form method="POST" enctype="multipart/form-data">
+    <input name="name" value="{{ mobo.name }}" placeholder="Name" required />
+    <input
+      name="price"
+      type="number"
+      step="0.01"
+      value="{{ mobo.price }}"
+      placeholder="Price"
+      required
+    />
+    <input
+      name="description"
+      value="{{ mobo.description }}"
+      placeholder="Description"
+    />
+    <input name="brand" value="{{ mobo.brand }}" placeholder="Brand" />
+    <input name="socket" value="{{ mobo.socket }}" placeholder="Socket" />
+    <input name="chipset" value="{{ mobo.chipset }}" placeholder="Chipset" />
+    <input name="ram_type" value="{{ mobo.ram_type }}" placeholder="RAM Type" />
+    <input
+      name="ram_slots"
+      value="{{ mobo.ram_slots }}"
+      placeholder="RAM Slots"
+    />
+    <input name="wifi" value="{{ mobo.wifi }}" placeholder="WiFi" />
+    <input
+      name="motherboard_size"
+      value="{{ mobo.motherboard_size }}"
+      placeholder="Motherboard Size"
+    />
+    <input
+      name="condition"
+      value="{{ mobo.condition }}"
+      placeholder="Condition"
+    />
+
+    <p>Current Image:</p>
+    {% if mobo.img %}
+    <img
+      src="{{ url_for('static', filename='images/parts/' + mobo.img) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image:</p>
+    <input type="file" name="img" />
+
+    <p>Current Image1:</p>
+    {% if mobo.img1 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/mobo/' + mobo.img1) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image1:</p>
+    <input type="file" name="img1" />
+
+    <p>Current Image2:</p>
+    {% if mobo.img2 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/mobo/' + mobo.img2) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image2:</p>
+    <input type="file" name="img2" />
+
+    
+
+    <p>Current Image3:</p>
+    {% if mobo.img3 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/mobo/' + mobo.img3) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image3:</p>
+    <input type="file" name="img3" />
+
+    
+    <p>Current Image4:</p>
+    {% if mobo.img4 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/mobo/' + mobo.img4) }}"
+      width="100"
+    />
+    {% else %} 
+    <img
+      src="../../static/images/parts/default_img.webp"
+      width="100"
+    />
+    {% endif %}
+    <p>Upload New Image4:</p>
+    <input type="file" name="img4" />
+
+    
+    <p>Current Brand Image:</p>
+    <img
+      src="{{ url_for('static', filename='images/brands/' + mobo.brandimg) }}"
+      width="100"
+    />
+    <p>Upload New Brand Image:</p>
+    <input type="file" name="brandimg" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</center>
+{% endblock %}

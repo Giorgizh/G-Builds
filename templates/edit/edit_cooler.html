@@ -1,0 +1,151 @@
+{% extends "base.html" %} {% block head %}
+<title>Edit Case Fan / Cooler</title>
+<link rel="stylesheet" href="../../static/css/reset.css" />
+<link rel="stylesheet" href="../../static/css/edit.css" />
+<link rel="stylesheet" href="../../static/css/media/mediaedit.css" />
+{% endblock %} {% block body %}
+<div class="ii">
+  <a onclick="history.back()">
+    <i style="color: white" class="fa-solid fa-arrow-left fa-2xl"></i>
+  </a>
+</div>
+
+<center>
+  <h1
+    style="text-align: center; color: white; font-size: 30px; padding-top: 30px"
+  >
+    Edit Case Fan / Cooler
+  </h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input name="name" value="{{ cooler.name }}" placeholder="Name" required />
+
+    <input
+      name="price"
+      type="number"
+      step="0.01"
+      value="{{ cooler.price }}"
+      placeholder="Price"
+      required
+    />
+
+    <input
+      name="description"
+      value="{{ cooler.description }}"
+      placeholder="Description"
+    />
+
+    <input
+      name="brand"
+      value="{{ cooler.brand }}"
+      placeholder="Brand (e.g. Noctua, Corsair, Arctic, Lian Li)"
+    />
+
+    <input
+      name="numoffans"
+      value="{{ cooler.numoffans }}"
+      placeholder="Number of Fans (e.g. 1, 3, 6 - for packs)"
+    />
+
+    <input
+      name="size"
+      value="{{ cooler.size }}"
+      placeholder="Fan Size (e.g. 120mm, 140mm, 200mm)"
+    />
+
+    <input
+      name="lighting"
+      value="{{ cooler.lighting }}"
+      placeholder="Lighting (e.g. RGB, ARGB, None)"
+    />
+
+    <input
+      name="color"
+      value="{{ cooler.color }}"
+      placeholder="Color (e.g. Black, White, RGB)"
+    />
+
+    <input
+      name="condition"
+      value="{{ cooler.condition }}"
+      placeholder="Condition (New / Used / Refurbished)"
+    />
+
+    <p>Current Image:</p>
+    {% if cooler.img %}
+    <img
+      src="{{ url_for('static', filename='images/parts/' + cooler.img) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image:</p>
+    <input type="file" name="img" />
+
+    <p>Current Image1:</p>
+    {% if cooler.img1 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/casefan/' + cooler.img1) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image1:</p>
+    <input type="file" name="img1" />
+
+    <p>Current Image2:</p>
+    {% if cooler.img2 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/casefan/' + cooler.img2) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image2:</p>
+    <input type="file" name="img2" />
+
+    <p>Current Image3:</p>
+    {% if cooler.img3 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/casefan/' + cooler.img3) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image3:</p>
+    <input type="file" name="img3" />
+
+    <p>Current Image4:</p>
+    {% if cooler.img4 %}
+    <img
+      src="{{ url_for('static', filename='images/parts/casefan/' + cooler.img4) }}"
+      width="100"
+    />
+    {% else %}
+    <img src="../../static/images/parts/default_img.webp" width="100" />
+    {% endif %}
+    <p>Upload New Image4:</p>
+    <input type="file" name="img4" />
+
+    <p>Current Brand Image:</p>
+    {% if cooler.brandimg and cooler.brandimg != "default_img.webp" %}
+    <img
+      src="{{ url_for('static', filename='images/brands/' + cooler.brandimg) }}"
+      width="100"
+      alt="Brand logo"
+    />
+    {% else %}
+    <p><em>No custom brand image uploaded yet</em></p>
+    {% endif %}
+
+    <p>Upload New Brand Image (optional):</p>
+    <input type="file" name="brandimg" accept="image/*" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</center>
+{% endblock %}

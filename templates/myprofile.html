@@ -1,0 +1,118 @@
+{% extends "base.html" %} {% block head %}
+<title>My Profile</title>
+<link rel="stylesheet" href="../static/css/reset.css" />
+<link rel="stylesheet" href="../static/css/myprofile.css" />
+<link rel="stylesheet" href="../static/css/media/mediamyprofile.css" />
+{% endblock %} {% block body %}
+<main>
+  <div id="modal-myprofile" class="modal">
+    <div class="modal-content">
+      <form
+        enctype="multipart/form-data"
+        method="POST"
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          align-items: center;
+        "
+      >
+        <div class="profile-img">
+          <img
+            id="profile-preview"
+            src="{{ url_for('static', filename='images/' + (profile.image or 'defaultuser_img.jpg')) }}"
+          />
+          <label for="image-upload" class="overlay">
+            <i class="fa-solid fa-arrow-up-from-bracket fa-2xl"></i>
+          </label>
+          <input
+            type="file"
+            id="image-upload"
+            name="image"
+            accept="image/*"
+            hidden
+            onchange="previewImage(event)"
+          />
+        </div>
+        <label>Username:</label>
+        <input
+          type="text"
+          name="username"
+          value="{{ profile.username }}"
+          required
+        />
+        <label>Email:</label>
+        <input type="email" name="email" value="{{ profile.email }}" required />
+
+        <label>New Password</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Leave empty to keep current"
+        />
+        <button
+          type="submit"
+          style="
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid red;
+            transition: 0.5s all;
+          "
+        >
+          Save Changes
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="order-history">
+    <h2>Order History</h2>
+    {% if orders %} {% for o in orders %}
+    <div class="order-card">
+      <div class="order-header">
+        <span>Order #{{ o.id }}</span>
+        <span>{{ o.created_at.strftime("%Y-%m-%d %H:%M") }}</span>
+      </div>
+      <div class="order-body">
+        {% for it in o.items %}
+        <div class="items">
+          <a href="/{{ it.product_type }}/{{ it.product_id }}">
+            <img
+              src="{{ url_for('static', filename='images/parts/' ~ (it.image_snapshot or 'placeholder.png')) }}"
+            />
+            <div class="info">
+              <p>{{ it.name_snapshot }}</p>
+            </div>
+          </a>
+          <div class="rght">
+            <div class="ck">
+              <p>${{ '%.2f'|format(it.price_snapshot * it.quantity) }}</p>
+
+              <div class="wd">
+                <p>x{{ it.quantity }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="order-footer">
+        <strong>Total: ${{ '%.2f'|format(o.total_price) }}</strong>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <p class="no-orders">You have no orders yet.</p>
+    {% endif %}
+  </div>
+</main>
+<script>
+  function previewImage(event) {
+    const reader = new FileReader();
+    reader.onload = function () {
+      const output = document.getElementById("profile-preview");
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+{% endblock %}

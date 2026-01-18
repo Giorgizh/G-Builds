@@ -1,0 +1,172 @@
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(../images/login.jpg);
+  background-size: cover;
+  background-position: center;
+}
+main {
+  margin: 50px 0px;
+}
+.select {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  gap: 30px;
+}
+.mobo,
+.cpu,
+.cpucooler,
+.ram,
+.gpu,
+.psu,
+.hdd,
+.ssd,
+.m2,
+.case,
+.cooler {
+  border: 2px solid red;
+  border-radius: 5px;
+  font-size: 25px;
+  height: 250px;
+  text-align: center;
+  padding-top: 10px;
+  width: 250px;
+  cursor: pointer;
+  transition: 0.5s all;
+  color: red;
+  background-color: white;
+}
+.mobo:hover,
+.cpu:hover,
+.cpucooler:hover,
+.ram:hover,
+.gpu:hover,
+.psu:hover,
+.hdd:hover,
+.ssd:hover,
+.m2:hover,
+.case:hover,
+.cooler:hover {
+  box-shadow: 0px 0px 15px rgb(255, 0, 21);
+  text-shadow: 0px 0px 15px rgb(255, 0, 21);
+}
+.mobo {
+  background-image: url(../images/parts/motherboard.webp);
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+.cpu {
+  background-image: url(../images/parts/cpu.png);
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+.cpucooler {
+  background-image: url(../images/parts/cpu-cooler.png);
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+.ram {
+  background-image: url(../images/parts/ram.png);
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+.gpu {
+  background-image: url(../images/parts/Gpu.webp);
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+.psu {
+  background-image: url(../images/parts/psu.png);
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+.hdd {
+  background-image: url(../images/parts/hdd.png);
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+.ssd {
+  background-image: url(../images/parts/SSD.avif);
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+.m2 {
+  background-image: url(../images/parts/m.2.webp);
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+.case {
+  background-image: url(../images/parts/case.png);
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+.cooler {
+  background-image: url(../images/parts/casefan.webp);
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+}
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+}
+
+.popup form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: 400px;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  input{
+    border-radius: 10px;
+    height: 30px;
+    border: 2px solid black;
+    width: 150px;
+    padding-left: 5px;
+  }
+}
+.images input{
+  height: 20px;
+}
+.save{
+  background-color: greenyellow;
+  border-radius: 15px;
+  width: 170px;
+  height: 30px;
+  border: 2px solid black;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+.save:hover{
+  background-color: rgb(188, 253, 90);
+}
+.cancel{
+  background-color: red;
+  border-radius: 15px;
+  width: 170px;
+  height: 30px;
+  border: 2px solid black;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+.cancel:hover{
+  background-color: rgb(255, 154, 154);
+}
